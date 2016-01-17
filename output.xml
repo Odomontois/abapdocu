@@ -1,0 +1,2823 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<types xxx="yyy">
+  <class name="ZCL_EX_RDD_ATTACHMENT">
+    <description>BAdI-класс ZCL_EX_RDD_ATTACHMENT</description>
+  </class>
+  <class name="ZCL_EX_RDD_ATTACH_DISPLAY">
+    <description>BAdI-класс ZCL_EX_RDD_ATTACH_DISPLAY</description>
+  </class>
+  <class name="ZCL_EX_RDD_FZ223_INTEGR">
+    <description>BAdI-класс ZCL_EX_RDD_FZ223_INTEGR</description>
+  </class>
+  <class name="ZCL_EX_RDD_FZ223_VIEW">
+    <description>BAdI-класс ZCL_EX_RDD_FZ223_VIEW</description>
+  </class>
+  <class name="ZCL_FZ223_CONST">
+    <description>Константы по ФЗ223</description>
+  </class>
+  <class name="ZCL_FZ223_DATA_CARRIER">
+    <description>Общий контейнер для переноса данных между событиями</description>
+    <method name="SET_DATA" exposure="public">
+      <description>Установить данные</description>
+      <param name="IM_OBJECT" byValue="true">
+        <description>Объект для получения данных</description>
+        <type>OBJECT</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_KEY" byValue="true">
+        <description>Дополнительный ключ данных</description>
+        <type>STRING</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_DATA_REF" byValue="true">
+        <description>Данные - ссылка</description>
+        <type>DATA</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_DATA">
+        <description>Данные</description>
+        <type>ANY</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="GET_DATA_REF" exposure="public">
+      <description>Получить ссылку на данные</description>
+      <param name="IM_OBJECT" byValue="true">
+        <description>Объект для получения данных</description>
+        <type>OBJECT</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_KEY" byValue="true">
+        <description>Дополнительный ключ данных</description>
+        <type>STRING</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_DATA">
+        <description>Данные</description>
+        <type>DATA</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="GET_DATA" exposure="public">
+      <description>Получить данные</description>
+      <param name="IM_OBJECT" byValue="true">
+        <description>Объект для получения данных</description>
+        <type>OBJECT</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_KEY" byValue="true">
+        <description>Дополнительный ключ данных</description>
+        <type>STRING</type>
+        <kind>importing</kind>
+      </param>
+      <param name="EX_DATA" byValue="true">
+        <description>Данные</description>
+        <type>ANY</type>
+        <kind>exporting</kind>
+      </param>
+    </method>
+  </class>
+  <class name="ZCL_FZ223_ENHANCEMENT">
+    <description>Утилиты для расширений по ФЗ223</description>
+    <method name="GET_ENH_GROUP" static="true" exposure="public">
+      <description>Получить группу расширений по параметрам</description>
+      <param name="IM_BUKRS" byValue="true">
+        <description>Балансовая единица</description>
+        <type>BUKRS</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_AREA" byValue="true">
+        <description>Область расширений</description>
+        <type>ZEFZ223_ENH_AREA</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_ENH_GROUP">
+        <description>Группы расширений по ФЗ223</description>
+        <type>ZEFZ223_ENHGROUP</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="GET_DEFAULT_ENH_GROUP" static="true" exposure="public">
+      <description>Получить группу расширений по умолчанию</description>
+      <param name="IM_AREA" byValue="true">
+        <description>Область расширений</description>
+        <type>ZEFZ223_ENH_AREA</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_ENH_GROUP">
+        <description>Группы расширений по ФЗ223</description>
+        <type>ZEFZ223_ENHGROUP</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="EXIST_ENH_GROUP" static="true" exposure="public">
+      <description>Существует ли настройка по параметрам</description>
+      <param name="IM_BUKRS" byValue="true">
+        <description>Балансовая единица</description>
+        <type>BUKRS</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_AREA" byValue="true">
+        <description>Область расширений</description>
+        <type>ZEFZ223_ENH_AREA</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_EXIST">
+        <description>Существует настройка</description>
+        <type>FLAG</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+  </class>
+  <class name="ZCL_FZ223_RDD_UTILS">
+    <description>Утилиты для обработки договоров</description>
+    <method name="GET_SCVD_NUM" static="true" exposure="public">
+      <description>Получить номер СЦВД по номеру АСВУД</description>
+      <param name="IM_RDD_ID" byValue="true">
+        <description>Идентификатор договорного документа</description>
+        <type>ZRDD_DD_ID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_SCVD_NUM">
+        <description>Номер договора СЦВД</description>
+        <type>ZDG_NUM0</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="LOG_PUSH" static="true" exposure="public">
+      <description>Положить сообщение в журнал</description>
+      <param name="IM_TYPE" byValue="true">
+        <description>Сообщения, тип сообщения</description>
+        <type>SYMSGTY</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_ID" byValue="true">
+        <description>Сообщения, класс сообщений</description>
+        <type>SYMSGID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_NO" byValue="true">
+        <description>Сообщения, номер сообщения</description>
+        <type>SYMSGNO</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_V1" byValue="true">
+        <description>Сообщения, переменная сообщения</description>
+        <type>SYMSGV</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_V2" byValue="true">
+        <description>Сообщения, переменная сообщения</description>
+        <type>SYMSGV</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_V3" byValue="true">
+        <description>Сообщения, переменная сообщения</description>
+        <type>SYMSGV</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_V4" byValue="true">
+        <description>Сообщения, переменная сообщения</description>
+        <type>SYMSGV</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="FIND_CREDITOR_INVOICE_EXT_REF" static="true" exposure="public">
+      <description>Найти счёт-фактуру по внешнему номеру и доп. признакам</description>
+      <param name="IM_EXTERNAL_REF" byValue="true">
+        <description>Внешний номер заявки по авиаперевозкам</description>
+        <type>ZZXBLNR50</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_COMPANY_CODE" byValue="true">
+        <description>Балансовая единица</description>
+        <type>BUKRS</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_CONTRACT_NUM" byValue="true">
+        <description>Номер договора АСВУД</description>
+        <type>ZRDD_DD_ID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_POSTING_DATE" byValue="true">
+        <description>Дата проводки в документе</description>
+        <type>BUDAT</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_CREDITOR_ID" byValue="true">
+        <description>Номер счета поставщика или кредитора</description>
+        <type>LIFNR</type>
+        <kind>importing</kind>
+      </param>
+      <param name="EX_BELNR" byValue="true">
+        <description>Номер документа счета-фактуры</description>
+        <type>RE_BELNR</type>
+        <kind>exporting</kind>
+      </param>
+      <param name="EX_GJAHR" byValue="true">
+        <description>Финансовый год</description>
+        <type>GJAHR</type>
+        <kind>exporting</kind>
+      </param>
+    </method>
+    <method name="GET_FILENAME_EXTENSION" static="true" exposure="public">
+      <description>Получить расширение файла</description>
+      <param name="IM_FILENAME" byValue="true">
+        <description>Имя файла</description>
+        <type>C</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_EXTENSION">
+        <description>Расишерений файла</description>
+        <type>STRING</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="PARSE_EXTERNAL_INVOICE_REF" static="true" exposure="public">
+      <description>Распарсить внешнюю ссылку на фактуру</description>
+      <param name="IM_XBLNR_EXTERNAL" byValue="true">
+        <description>Внешний номер документа для экспорта во внеш. сист.</description>
+        <type>C</type>
+        <kind>importing</kind>
+      </param>
+      <param name="EX_XBLNR" byValue="true">
+        <description>Ссылочный номер документа</description>
+        <type>C</type>
+        <kind>exporting</kind>
+      </param>
+      <param name="EX_BLDAT" byValue="true">
+        <description>Дата документа</description>
+        <type>BLDAT</type>
+        <kind>exporting</kind>
+      </param>
+    </method>
+    <method name="GET_CONTRACT_REG_NUM" static="true" exposure="public">
+      <description>Получить рег. номер договора</description>
+      <param name="IM_RDD_ID" byValue="true">
+        <description>Идентификатор договорного документа</description>
+        <type>ZRDD_DD_ID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_REG_NUM">
+        <description>Рег. номер договора</description>
+        <type>STRING</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="BUILD_EDIT_INFO" static="true" exposure="public">
+      <description>Сконструировать структуру "информация о редактировании"</description>
+      <param name="IM_PREVIOUS" byValue="true">
+        <description>Предыдущая Информация о редактировании позиции по форме</description>
+        <type>ZSFZ223_RDD_FORM_EDIT_INFO_V</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_EDIT_INFO">
+        <description>Информация о редактировании позиции по форме</description>
+        <type>ZSFZ223_RDD_FORM_EDIT_INFO_V</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="OUTDATED" static="true" exposure="public">
+      <description>Разрешимая самая поздняя дата публикации прошла</description>
+      <param name="IM_INFO_DATE" byValue="true">
+        <description>Дата данных для публикации</description>
+        <type>SY-DATUM</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_CHECK_DATE" byValue="true">
+        <description>Дата для проверки ( текущая )</description>
+        <type>SY-DATUM</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_INTERVAL" byValue="true">
+        <description>Максимально разрешимый интервал в днях</description>
+        <type>I</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_OUTDATED">
+        <description>Данные были просрочены</description>
+        <type>ABAP_BOOL</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="GET_USER_NAME" static="true" exposure="public">
+      <description>Получить имя пользователя</description>
+      <param name="IM_USERNAME" byValue="true">
+        <description>Система R/3: имя пользователя при регистрации</description>
+        <type>SY-UNAME</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_TEXT">
+        <description>Имя пользователя</description>
+        <type>STRING</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+  </class>
+  <class name="ZCL_GOS_ATTACH_LOCK">
+    <description>Блокировка для вложения</description>
+    <method name="RAISE_AUTHORITY_ERROR" exposure="private">
+      <description>Вызвать ошибку проверки полномочий</description>
+      <param name="IM_LOCK" byValue="true">
+        <description>Состовние вложения: блокировано \ разблокировано</description>
+        <type>ZEFZ223_ATTACH_LOCK</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="CREATE_NOTE" exposure="private">
+      <description>Создать заметку</description>
+      <param name="IM_VERSION" byValue="true">
+        <description>Архивная версия записи</description>
+        <type>ZSGL_ARHIV</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_MESSAGE_DIALOG" byValue="true">
+        <description>С диалогом</description>
+        <type>ABAP_BOOL</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_MESSAGE" byValue="true">
+        <description>Строки текста_T</description>
+        <type>TLINE_T</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="AUTHORITY_CHECK" exposure="private">
+      <description>Проверка полномочий на установку статуса</description>
+      <param name="IM_LOCK" byValue="true">
+        <description>Состовние вложения: блокировано \ разблокировано</description>
+        <type>ZEFZ223_ATTACH_LOCK</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_AUTHORIZED">
+        <description>Авторизация пройдена успешно</description>
+        <type>ABAP_BOOL</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="RETRIEVE_REQUESTED" static="true" exposure="private">
+      <description>Получить новые запрошенные записи</description>
+    </method>
+    <method name="SAVE_ALL" event_handler="true" static="true" exposure="private">
+      <description>Сохранить все нужные записи</description>
+      <refClass>CL_OS_TRANSACTION_END_NOTIFIER</refClass>
+      <refName>COMMIT_REQUESTED</refName>
+    </method>
+    <method name="DELETE" exposure="public">
+      <refClass>ZIF_PERSISTENT_DELETABLE</refClass>
+      <refName>DELETE</refName>
+    </method>
+    <method name="GET_ID" exposure="public">
+      <refClass>ZIF_PERSISTENT_IDENTIFIABLE</refClass>
+      <refName>GET_ID</refName>
+    </method>
+    <method name="REFRESH" exposure="public">
+      <refClass>ZIF_PERSISTENT_REFRESHABLE</refClass>
+      <refName>REFRESH</refName>
+    </method>
+    <method name="SAVE" exposure="public">
+      <refClass>ZIF_PERSISTENT_SAVABLE</refClass>
+      <refName>SAVE</refName>
+    </method>
+    <method name="CONSTRUCTOR" exposure="public">
+      <description>CONSTRUCTOR</description>
+      <param name="IM_ID" byValue="true">
+        <description>Ключ объекта</description>
+        <type>SWO_TYPEID</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="GET_LOCK" exposure="public">
+      <description>Получить состояние блокировки</description>
+      <param name="RE_LOCK">
+        <description>Скан заблокирован</description>
+        <type>ZEFZ223_ATTACH_LOCK</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="SET_LOCK" exposure="public">
+      <description>Установить состояние блокировки</description>
+      <param name="IM_LOCK" byValue="true">
+        <description>Состовние вложения: блокировано \ разблокировано</description>
+        <type>ZEFZ223_ATTACH_LOCK</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_MESSAGE_DIALOG" byValue="true">
+        <description>Ввести сообщение в диалоге</description>
+        <type>ABAP_BOOL</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_MESSAGE" byValue="true">
+        <description>Текст собощения</description>
+        <type>TLINE_T</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="DISPLAY_NOTE" exposure="public">
+      <description>Просмотреть текст заметки</description>
+    </method>
+    <method name="IS_SET" exposure="public">
+      <description>Блокировка хотя бы раз устанавливалась для вложения ?</description>
+      <param name="RE_SET">
+        <description>Блокировка устанавливалась</description>
+        <type>ABAP_BOOL</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="CLASS_CONSTRUCTOR" static="true" exposure="public">
+      <description>CLASS_CONSTRUCTOR</description>
+    </method>
+    <method name="GET_INSTANCE" static="true" exposure="public">
+      <description>Создать экземпляр \ flyweight</description>
+      <param name="IM_ID" byValue="true">
+        <description>Ключ объекта</description>
+        <type>SWO_TYPEID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_INSTANCE">
+        <description>Блокировка для вложения</description>
+        <type>ZCL_GOS_ATTACH_LOCK</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="REFRESH_ALL" static="true" exposure="public">
+      <description>Обновить все объекты</description>
+    </method>
+  </class>
+  <class name="ZCL_GOS_ATTACH_SCANS_FZ223">
+    <description>Дополнительный функционал скан образов для ФЗ 223</description>
+    <method name="GET_ALV_F4" exposure="private">
+      <description>Получить настройки для поиска F4 по поля в ALV Grid</description>
+      <param name="RE_ALV_F4">
+        <description>ALV-Control: таблица для F4-обработки зарегистрир. полей</description>
+        <type>LVC_T_F4</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="GET_ALV_LAYOUT" exposure="private">
+      <description>Получить настройки вывода ALV Grid</description>
+      <param name="RE_LAYOUT">
+        <description>ALV-Control: структура формата</description>
+        <type>LVC_S_LAYO</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="ON_DOUBLE_CLICK" event_handler="true" exposure="private">
+      <description>Обработка двойного клика по полю</description>
+      <refClass>CL_GUI_ALV_GRID</refClass>
+      <refName>DOUBLE_CLICK</refName>
+      <param name="E_ROW">
+        <kind>importing</kind>
+      </param>
+      <param name="E_COLUMN">
+        <kind>importing</kind>
+      </param>
+      <param name="ES_ROW_NO">
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="EDIT_TEXT" exposure="private">
+      <description>Обработка комментария</description>
+      <param name="IM_OBJECT_ID" byValue="true">
+        <description>Ключ объекта</description>
+        <type>SWO_TYPEID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_DISPLAY_ONLY" byValue="true">
+        <description>ОТКРЫТЬ ТОЛЬКО ДЛЯ ПРОСМОТРА</description>
+        <type>ABAP_BOOL</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="ON_MENU_REQUEST" event_handler="true" exposure="private">
+      <description>Обработка запроса контекстного меню</description>
+      <refClass>CL_GUI_ALV_GRID</refClass>
+      <refName>CONTEXT_MENU_REQUEST</refName>
+      <param name="SENDER" byValue="true">
+        <kind>importing</kind>
+      </param>
+      <param name="E_OBJECT" byValue="true">
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="ON_MENU_SELECT" event_handler="true" exposure="private">
+      <description>Обработка выбора пункта в контекстном меню</description>
+      <refClass>CL_GUI_ALV_GRID</refClass>
+      <refName>USER_COMMAND</refName>
+      <param name="E_UCOMM" byValue="true">
+        <kind>importing</kind>
+      </param>
+      <param name="SENDER" byValue="true">
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="GET_CHOSEN_LINE" exposure="private">
+      <description>Получить выбранную строчку</description>
+      <param name="IM_GRID" byValue="true">
+        <description>ALV List Viewer</description>
+        <type>CL_GUI_ALV_GRID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_LINE">
+        <description>Структура отображения вложенных скан-образов</description>
+        <type>ZSALV_GOS_ATTACH_LINKS</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="CONSTRUCTOR" exposure="public">
+      <description>CONSTRUCTOR</description>
+      <param name="IM_ATTACH_SCANS" byValue="true">
+        <description>Класс для прикрепления сканов</description>
+        <type>ZCL_GOS_ATTACH_SCANS</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="BUILD_FIELD_CATALOG" exposure="public">
+      <description>Построение каталога полей</description>
+      <param name="CH_FIELD_CATALOG" byValue="true">
+        <description>Каталог полей ListViewerControl</description>
+        <type>LVC_T_FCAT</type>
+        <kind>changing</kind>
+      </param>
+    </method>
+    <method name="PREPARE_LINE_FOR_SAVE" exposure="public">
+      <description>Подготовить данные для сохранения</description>
+      <param name="IM_OUTPUT_DATA" byValue="true">
+        <description>Структура отображения вложенных скан-образов</description>
+        <type>ZSALV_GOS_ATTACH_LINKS</type>
+        <kind>importing</kind>
+      </param>
+      <param name="CH_GOS_INFO" byValue="true">
+        <description>Cкан-образ: статус/тип</description>
+        <type>ZGOS_INFO</type>
+        <kind>changing</kind>
+      </param>
+    </method>
+    <method name="PREPARE_LINE_FOR_DISPLAY" exposure="public">
+      <description>Подготовить данные для отображения</description>
+      <param name="IM_GOS_INFO" byValue="true">
+        <description>Cкан-образ: статус/тип</description>
+        <type>ZGOS_INFO</type>
+        <kind>importing</kind>
+      </param>
+      <param name="CH_OUTPUT" byValue="true">
+        <description>Структура отображения вложенных скан-образов</description>
+        <type>ZSALV_GOS_ATTACH_LINKS</type>
+        <kind>changing</kind>
+      </param>
+    </method>
+    <method name="IS_LINE_CHANGED" exposure="public">
+      <description>Определить изменена ли строка</description>
+      <param name="IM_OUTPUT_DATA" byValue="true">
+        <description>Данные вывода</description>
+        <type>ZSALV_GOS_ATTACH_LINKS</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_GOS_INFO" byValue="true">
+        <description>Cкан-образ: статус/тип</description>
+        <type>ZGOS_INFO</type>
+        <kind>importing</kind>
+      </param>
+      <param name="CH_CHANGED">
+        <description>Изменена ли строка</description>
+        <type>ABAP_BOOL</type>
+        <kind>changing</kind>
+      </param>
+    </method>
+    <method name="REGISTER_GRID_EVENTS" exposure="public">
+      <description>Зарегистрировать события для формы</description>
+      <param name="IM_GRID" byValue="true">
+        <description>ALV List Viewer</description>
+        <type>CL_GUI_ALV_GRID</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="FIELDS_FOR_EDIT_MODE" exposure="public">
+      <description>Добавить поля для обработки режима редактирования</description>
+      <param name="CH_FIELDNAMES" byValue="true">
+        <description>Множество имен полей</description>
+        <type>TTFIELDNAME</type>
+        <kind>changing</kind>
+      </param>
+    </method>
+    <method name="ON_TOOLBAR_FILL" event_handler="true" exposure="public">
+      <description>Обработать заполнение панели инструментов</description>
+      <refClass>CL_GUI_ALV_GRID</refClass>
+      <refName>TOOLBAR</refName>
+      <param name="E_OBJECT" byValue="true">
+        <kind>importing</kind>
+      </param>
+      <param name="E_INTERACTIVE" byValue="true">
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="ON_TOOLBAR_CLICK" event_handler="true" exposure="public">
+      <description>Обработка нажатия кнопки на панели интсрументов</description>
+      <refClass>CL_GUI_ALV_GRID</refClass>
+      <refName>USER_COMMAND</refName>
+      <param name="E_UCOMM" byValue="true">
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="GET_LOCK" exposure="public">
+      <description>Заблокирован ли скан для редактирования</description>
+      <param name="IM_OBJ_ID" byValue="true">
+        <description>Ид. объекта</description>
+        <type>SWO_TYPEID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_LOCK">
+        <description>Состовние вложения: блокировано \ разблокировано</description>
+        <type>ZEFZ223_ATTACH_LOCK</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="CLASS_CONSTRUCTOR" static="true" exposure="public">
+      <description>CLASS_CONSTRUCTOR</description>
+    </method>
+    <method name="GET_NOTE" static="true" exposure="public">
+      <description>Получить поля к комментарию</description>
+      <param name="IM_OBJECT_ID" byValue="true">
+        <description>Ключ объекта</description>
+        <type>SWO_TYPEID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_NOTE">
+        <description>Комментарий ко вложению</description>
+        <type>ZSFZ223_ATTACH_NOTE</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+  </class>
+  <class name="ZCL_GOS_SRV_RDD_FZ223_ATTACH">
+    <description>Скан-образы по ФЗ223</description>
+  </class>
+  <class name="ZCL_IM_RDD_ATTACHMENT_DEF">
+    <description>Класс внедрения для BAdI-внедрения ZRDD_ATTACHMENT_DEF</description>
+  </class>
+  <class name="ZCL_IM_RDD_ATTACH_FZ223">
+    <description>Класс внедрения для BAdI-внедрения ZRDD_ATTACH_FZ223</description>
+  </class>
+  <class name="ZCL_IM_RDD_DOG_ATTACH_DOG">
+    <description>Класс внедрения для BAdI-внедрения ZRDD_DOG_ATTACH_DOG</description>
+    <method name="CLASS_CONSTRUCTOR" static="true" exposure="public">
+      <description>CLASS_CONSTRUCTOR</description>
+    </method>
+  </class>
+  <class name="ZCL_IM_RDD_DOG_ATTACH_IINV">
+    <description>Класс внедрения для BAdI-внедрения ZRDD_DOG_ATTACH_IINV</description>
+  </class>
+  <class name="ZCL_IM_RDD_FZ223_INT_NOM">
+    <description>Класс внедрения для BAdI-внедрения ZRDD_FZ223_INT_NOM</description>
+  </class>
+  <class name="ZCL_IM_RDD_FZ223_INT_SCAN">
+    <description>Класс внедрения для BAdI-внедрения ZRDD_FZ223_INT_SCAN</description>
+  </class>
+  <class name="ZCL_IM_RDD_FZ223_VIEW_ATT">
+    <description>Класс внедрения для BAdI-внедрения ZRDD_FZ223_VIEW_ATT</description>
+    <method name="ON_SAVE" event_handler="true" exposure="private">
+      <description>Обработка сохранения</description>
+      <refClass>ZRDD_IF_FZ223_TREE_VIEW</refClass>
+      <refName>SAVE</refName>
+      <param name="SENDER" byValue="true">
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="ON_NODE_ADDED" event_handler="true" exposure="private">
+      <description>Обработка добавления узла</description>
+      <refClass>ZRDD_IF_FZ223_TREE_VIEW</refClass>
+      <refName>NODE_ADDED</refName>
+      <param name="IM_NODE_KEY" byValue="true">
+        <kind>importing</kind>
+      </param>
+      <param name="IM_FORM" byValue="true">
+        <kind>importing</kind>
+      </param>
+      <param name="IM_FORM_DATA" byValue="true">
+        <kind>importing</kind>
+      </param>
+      <param name="IM_POSITION" byValue="true">
+        <kind>importing</kind>
+      </param>
+      <param name="IM_CARRIER" byValue="true">
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="ON_HOTSPOT_CLICK" event_handler="true" exposure="private">
+      <description>Обработка клика по иконке</description>
+      <refClass>ZRDD_IF_FZ223_TREE_VIEW</refClass>
+      <refName>ITEM_HOTSPOT_CLICK</refName>
+      <param name="IM_NODE_KEY" byValue="true">
+        <kind>importing</kind>
+      </param>
+      <param name="IM_FIELD_NAME" byValue="true">
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="DISPLAY_NODE_ATTACH_INFO" exposure="private">
+      <description>Показать информацию о вложениях для узла</description>
+      <param name="IM_NODE_KEY" byValue="true">
+        <description>ALV-Tree-Control: ключ узла</description>
+        <type>LVC_NKEY</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="GET_SCANS_FOR_FORM" exposure="private">
+      <description>Получить объект со скан-образами для формы</description>
+      <param name="IM_FORM" byValue="true">
+        <description>Номер формы по которой выгружаются данные типы договоров</description>
+        <type>ZGOS_ATTACH_OOS_FORM</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_POSITION" byValue="true">
+        <description>Позиция формы?</description>
+        <type>ABAP_BOOL</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_FORM_DATA" byValue="true">
+        <description>Данные формы</description>
+        <type>ANY</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_SCANS">
+        <description>Контейнер скан-образов для отправки на ООС</description>
+        <type>ZRDD_IF_FZ223_SCANS</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="EXCESS_SIZE" exposure="private">
+      <description>Проверить объём пакета</description>
+      <param name="IM_SCANS" byValue="true">
+        <description>Контейнер скан-образов для отправки на ООС</description>
+        <type>ZRDD_IF_FZ223_SCANS</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_EXCESS">
+        <description>Допустимый размер пакета превышен</description>
+        <type>ABAP_BOOL</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="ON_REFRESH" event_handler="true" exposure="private">
+      <description>Обработать обновление данных</description>
+      <refClass>ZRDD_IF_FZ223_TREE_VIEW</refClass>
+      <refName>REFRESH</refName>
+    </method>
+    <method name="ON_DELETE" event_handler="true" exposure="private">
+      <description>Обработать  удаление данных</description>
+      <refClass>ZRDD_IF_FZ223_TREE_VIEW</refClass>
+      <refName>DELETE</refName>
+    </method>
+    <method name="ON_NODE_ATTACH_CLOSE" event_handler="true" exposure="private">
+      <description>Закрытие контейнера с информ. по вложениям</description>
+      <refClass>CL_GUI_DIALOGBOX_CONTAINER</refClass>
+      <refName>CLOSE</refName>
+    </method>
+    <method name="INIT_NODE_ATTACH_INFO" exposure="private">
+      <description>Инициировать окно с данными по вложениям</description>
+    </method>
+    <method name="ON_NODE_ATTACH_DOUBLE_CLICK" event_handler="true" exposure="private">
+      <description>Показать вложение</description>
+      <refClass>CL_GUI_ALV_GRID</refClass>
+      <refName>DOUBLE_CLICK</refName>
+      <param name="E_ROW" byValue="true">
+        <kind>importing</kind>
+      </param>
+      <param name="E_COLUMN" byValue="true">
+        <kind>importing</kind>
+      </param>
+      <param name="ES_ROW_NO" byValue="true">
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="VALIDATE_UNIQUE_ATTACHMENTS" exposure="private">
+      <description>Проверить уникальность вложений</description>
+      <param name="IM_SCANS" byValue="true">
+        <description>Контейнер скан-образов для отправки на ООС</description>
+        <type>ZGOS_CL_FZ223_SCANS</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_LOG_PUSH" byValue="true">
+        <description>Записывать лог?</description>
+        <type>ABAP_BOOL</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_VALID">
+        <description>Корректно?</description>
+        <type>ABAP_BOOL</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+  </class>
+  <class name="ZCL_IM_RDD_FZ223_VIEW_NOM">
+    <description>Класс внедрения для BAdI-внедрения ZRDD_FZ223_VIEW_NOM</description>
+    <method name="UPD_NODE_CONTRACT" exposure="private">
+      <description>обновления узла с договором</description>
+      <param name="IM_DATA" byValue="true">
+        <description>Данные узла</description>
+        <type>ANY</type>
+        <kind>importing</kind>
+      </param>
+      <param name="CH_NODE" byValue="true">
+        <description>Данные 223ФЗ для ALV TREE</description>
+        <type>ZRDD_STR_DD_223FZ_TREE</type>
+        <kind>changing</kind>
+      </param>
+    </method>
+    <method name="ON_LOAD" event_handler="true" exposure="private">
+      <description>Обработка загрузки данных из БД</description>
+      <refClass>ZRDD_IF_FZ223_TREE_VIEW</refClass>
+      <refName>LOAD</refName>
+      <param name="SENDER">
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="LOAD_CONTRACT_POSITIONS" exposure="private">
+      <description>Загрузить позиции договора</description>
+      <param name="IM_TREE" byValue="true">
+        <description>Древовидный диалог по выгрузке по ФЗ223</description>
+        <type>ZRDD_IF_FZ223_TREE_VIEW</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="LOAD_PERFORMANCE_POSITIONS" exposure="private">
+      <description>Загрузить позиции исполнения</description>
+      <param name="IM_TREE" byValue="true">
+        <description>Древовидный диалог по выгрузке по ФЗ223</description>
+        <type>ZRDD_IF_FZ223_TREE_VIEW</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="ON_SAVE" event_handler="true" exposure="private">
+      <description>Обработка сохранения</description>
+      <refClass>ZRDD_IF_FZ223_TREE_VIEW</refClass>
+      <refName>SAVE</refName>
+      <param name="SENDER">
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="SAVE_CONTRACT_POSITIONS" exposure="private">
+      <description>Сохранение позиций по договору</description>
+      <param name="IM_NODES" byValue="true">
+        <description>ALV-Tree-Control: таблица узлов</description>
+        <type>LVC_T_NKEY</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="SAVE_PERFORMANCE_POSITIONS" exposure="private">
+      <description>Сохранение позиций по исполнению</description>
+      <param name="IM_NODES" byValue="true">
+        <description>ALV-Tree-Control: таблица узлов</description>
+        <type>LVC_T_NKEY</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="UPD_NODE_PERFORMANCE" exposure="private">
+      <description>Обновление узла с исполнением</description>
+      <param name="IM_DATA" byValue="true">
+        <description>Данные узла</description>
+        <type>ANY</type>
+        <kind>importing</kind>
+      </param>
+      <param name="CH_NODE" byValue="true">
+        <description>Данные 223ФЗ для ALV TREE</description>
+        <type>ZRDD_STR_DD_223FZ_TREE</type>
+        <kind>changing</kind>
+      </param>
+    </method>
+    <method name="ON_MENU_REQUEST" event_handler="true" exposure="private">
+      <description>Обработка запроса контекстного меню</description>
+      <refClass>ZRDD_IF_FZ223_TREE_VIEW</refClass>
+      <refName>MENU_REQUEST</refName>
+      <param name="IM_NODE_KEY">
+        <kind>importing</kind>
+      </param>
+      <param name="IM_FIELD_NAME">
+        <kind>importing</kind>
+      </param>
+      <param name="IM_MENU">
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="ON_MENU_SELECT" event_handler="true" exposure="private">
+      <description>Обработка выбора пункта в контекстном меню</description>
+      <refClass>ZRDD_IF_FZ223_TREE_VIEW</refClass>
+      <refName>MENU_SELECT</refName>
+      <param name="IM_NODE_KEY">
+        <kind>importing</kind>
+      </param>
+      <param name="IM_FIELD_NAME">
+        <kind>importing</kind>
+      </param>
+      <param name="IM_FCODE">
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="ON_NODE_ADDED" event_handler="true" exposure="private">
+      <description>Обработка добавления узла</description>
+      <refClass>ZRDD_IF_FZ223_TREE_VIEW</refClass>
+      <refName>NODE_ADDED</refName>
+      <param name="IM_NODE_KEY">
+        <kind>importing</kind>
+      </param>
+      <param name="IM_FORM">
+        <kind>importing</kind>
+      </param>
+      <param name="IM_FORM_DATA">
+        <kind>importing</kind>
+      </param>
+      <param name="IM_POSITION">
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="GET_NOM_FOR_CONTRACT" exposure="private">
+      <description>Получить позиции номенклатуры для договора</description>
+      <param name="IM_NODE_KEY" byValue="true">
+        <description>ALV-Tree-Control: ключ узла</description>
+        <type>LVC_NKEY</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_NOM_TAB">
+        <description>Данные на ООС - позиция договора</description>
+        <type>ZRDD_FZ223_TAB_NOMEN_POS</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="GET_NOM_FOR_PERFORMANCE" exposure="private">
+      <description>Получить позиции номенклатуры для исполнения</description>
+      <param name="IM_NODE_KEY" byValue="true">
+        <description>ALV-Tree-Control: ключ узла</description>
+        <type>LVC_NKEY</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_NOM_TAB">
+        <description>Данные на ООС - позиция договора</description>
+        <type>ZRDD_FZ223_TAB_NOMEN_POS</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="DISPLAY_POSITIONS" exposure="private">
+      <description>Отобразить позиции</description>
+      <param name="IM_POSITIONS" byValue="true">
+        <description>Данные на ООС - позиция договора</description>
+        <type>ZRDD_FZ223_TAB_NOMEN_POS</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_VARIANT_HANDLE" byValue="true">
+        <description>Идент. номер для многократных вызовов из одной программы</description>
+        <type>SLIS_HANDL</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="DISPLAY_POSITIONS_2" exposure="private">
+      <description>Отобразить позиции</description>
+      <param name="IM_POSITIONS" byValue="true">
+        <description>Номенклатурные позиции</description>
+        <type>TY_ALV_POSITIONS</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_VARIANT_HANDLE" byValue="true">
+        <description>Идент. номер для многократных вызовов из одной программы</description>
+        <type>SLIS_HANDL</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="GET_NOM_FOR_CONTRACT_2" exposure="private">
+      <description>Получить позиции номенклатуры для договора</description>
+      <param name="IM_NODE_KEY" byValue="true">
+        <description>ALV-Tree-Control: ключ узла</description>
+        <type>LVC_NKEY</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_NOM_TAB">
+        <description>Номенклатурные позиции</description>
+        <type>TY_ALV_POSITIONS</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="GET_NOM_FOR_PERFORMANCE_2" exposure="private">
+      <description>Получить позиции номенклатуры для исполнения</description>
+      <param name="IM_NODE_KEY" byValue="true">
+        <description>ALV-Tree-Control: ключ узла</description>
+        <type>LVC_NKEY</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_NOM_TAB">
+        <description>Номенклатурные позиции</description>
+        <type>TY_ALV_POSITIONS</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="INIT_NODE_POS_INFO" exposure="private">
+      <description>Инициировать окно с данными по позициям</description>
+      <param name="IM_VARIANT_HANDLE" byValue="true">
+        <description>Идент. номер для многократных вызовов из одной программы</description>
+        <type>SLIS_HANDL</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="ON_NODE_POS_CLOSE" event_handler="true" exposure="private">
+      <description>Закрытие контейнера с информ. по вложениям</description>
+      <refClass>CL_GUI_DIALOGBOX_CONTAINER</refClass>
+      <refName>CLOSE</refName>
+    </method>
+    <method name="ON_NODE_POS_DOUBLE_CLICK" event_handler="true" exposure="private">
+      <description>Показать заказ</description>
+      <refClass>CL_GUI_ALV_GRID</refClass>
+      <refName>DOUBLE_CLICK</refName>
+      <param name="E_ROW">
+        <description>ALV-Control: описание строки</description>
+        <kind>importing</kind>
+      </param>
+      <param name="E_COLUMN">
+        <description>ALV-Control: ид. столбца</description>
+        <kind>importing</kind>
+      </param>
+      <param name="ES_ROW_NO">
+        <description>Присвоение номера строки ид. строки</description>
+        <kind>importing</kind>
+      </param>
+    </method>
+  </class>
+  <class name="ZCL_IM__BADI_FZ223_SCN_CHK">
+    <description>Класс внедрения для BAdI-внедрения Z_BADI_FZ223_SCN_CHK</description>
+  </class>
+  <class name="ZCL_RDD_FZ223_SCAN_INTEGRATION">
+    <description/>
+  </class>
+  <class name="ZCL_RDD_OOS_FZ223_SCANS">
+    <description>Контейнер скан-образов для отправки на ООС</description>
+    <method name="INITIALIZE_SCANS" exposure="private">
+      <description>Инициализировать контейнер скан-образов</description>
+    </method>
+    <method name="FILL_ATTACHMENT_DATA" exposure="private">
+      <description>Сгенерировать данные для вложений</description>
+    </method>
+    <method name="GENERATE_NAMES" exposure="private">
+      <description>Сгенерирать имена файлов для вложений</description>
+    </method>
+    <method name="RETRIEVE_CONTENT" exposure="private">
+      <description>Получить содержимое файлов</description>
+    </method>
+    <method name="IS_ATTACHMENT_VALID" exposure="private">
+      <description>Проверить, что вложение подходит для выгрузки</description>
+      <param name="IM_HEADER" byValue="true">
+        <description>Данные для ООС - вложения к форме отправки - заголовок</description>
+        <type>ZSRDD_FZ223_FORM_ATTACH_HEAD</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_VALID">
+        <description>Вложение соответствует</description>
+        <type>ABAP_BOOL</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="CALCULATE_CHARTAB_LENGTH" exposure="private">
+      <description>Вычислить  длину содержимого в бинарной таблице</description>
+      <param name="IM_TAB" byValue="true">
+        <description>Таблица с бинарным содержимым</description>
+        <type>STANDARD TABLE</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_LENGTH">
+        <description>Длина</description>
+        <type>I</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="CONV_CHAR_TO_BIN" exposure="private">
+      <description>Конвертация строковой таблицы в бинарную</description>
+      <param name="IM_CHAR_TAB" byValue="true">
+        <description>SAPoffice: простой список с длиной столбца 255</description>
+        <type>SWUOCONTTAB</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_BIN_TAB">
+        <description>Таблица с бинарным содержимым вложения</description>
+        <type>ZRDD_FZ223_TAB_ATTACH_BIN</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="RETRIEVE_SAVED" exposure="private">
+      <description>Получить уже сохранённые данные о вложениях</description>
+    </method>
+    <method name="BUILD_LOCK_MESSAGE" exposure="private">
+      <description>Сконструировать сообщение для блокировки</description>
+      <param name="IM_ATTACHMENT" byValue="true">
+        <description>Вся информация о вложениях по ФЗ223</description>
+        <type>ZSRDD_FZ223_ATTACHMENT</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_MESSAGE">
+        <description>Строки текста_T</description>
+        <type>TLINE_T</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="FILL_ATTACHMENT_MOD_STATUS" exposure="private">
+      <description>Заполнить статус изменения для вложений</description>
+    </method>
+    <method name="FILL_DELETED_ATTACHMENTS" exposure="private">
+      <description>заполнить удалённые вложения</description>
+    </method>
+    <method name="FILL_ACTUAL_DATA" exposure="private">
+      <description>заполнить актуальные вложения</description>
+    </method>
+    <method name="DELETE" exposure="public">
+      <refClass>ZIF_PERSISTENT_DELETABLE</refClass>
+      <refName>DELETE</refName>
+    </method>
+    <method name="GET_ID" exposure="public">
+      <refClass>ZIF_PERSISTENT_IDENTIFIABLE</refClass>
+      <refName>GET_ID</refName>
+    </method>
+    <method name="REFRESH" exposure="public">
+      <refClass>ZIF_PERSISTENT_REFRESHABLE</refClass>
+      <refName>REFRESH</refName>
+    </method>
+    <method name="SAVE" exposure="public">
+      <refClass>ZIF_PERSISTENT_SAVABLE</refClass>
+      <refName>SAVE</refName>
+    </method>
+    <method name="CONSTRUCTOR" exposure="public">
+      <description>CONSTRUCTOR</description>
+      <param name="IM_FORM" byValue="true">
+        <description>Номер формы по которой выгружаются данные типы договоров</description>
+        <type>ZEFZ223_ATTACH_OOS_FORM</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_OBJ_TYPE" byValue="true">
+        <description>Тип объекта</description>
+        <type>SWO_OBJTYP</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_OBJ_ID" byValue="true">
+        <description>Ид. объекта</description>
+        <type>SWO_OBJID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_FETCH_BINARY" byValue="true">
+        <description>Получать содержимое файлов?</description>
+        <type>ABAP_BOOL</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="GET_ATTACHMENT_DATA" exposure="public">
+      <description>Получить данные по скан-образам</description>
+      <param name="IM_INCLUDE_DELETED" byValue="true">
+        <description>Включая удалённые записи</description>
+        <type>ABAP_BOOL</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_ATTACHMENT_DATA">
+        <description>Данные вложений для ФЗ223</description>
+        <type>ZIRDD_FZ223_FORM_ATTACHMENT</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="GET_STATUS" exposure="public">
+      <description>Получить статус вложений относительно передачи</description>
+      <param name="RE_STATUS">
+        <description>статус вложений</description>
+        <type>I</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="SET_CONTRACT_NUM" exposure="public">
+      <description>Установить регистрационный номер договора</description>
+      <param name="IM_RDD_ID" byValue="true">
+        <description>Регистрационный номер договора</description>
+        <type>ZRDD_DD_ID</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="GET_ATTACHMENT_HEADERS" exposure="public">
+      <description>Получить заголовки всех скан-образов</description>
+      <param name="RE_HEADERS">
+        <description>Данные вложений для ФЗ223 - заголовки</description>
+        <type>ZIRDD_FZ223_FORM_ATTACH_HEAD</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="GET_ITEM_STATUS" exposure="public">
+      <description>Получить статус по единичному скан-образу</description>
+      <param name="IM_OBJ_ID" byValue="true">
+        <description>Ключ объекта</description>
+        <type>SWO_TYPEID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_STATUS">
+        <description>Статус позиции</description>
+        <type>I</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="SET_FETCH_BINARY" exposure="public">
+      <description>Установить флаг получения бин. содержимого</description>
+      <param name="IM_FETCH_BINARY" byValue="true">
+        <description>Получить бин. содержимое</description>
+        <type>ABAP_BOOL</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="CLASS_CONSTRUCTOR" static="true" exposure="public">
+      <description>CLASS_CONSTRUCTOR</description>
+    </method>
+    <method name="CREATE_FOR_CONTRACT" static="true" exposure="public">
+      <description>Получить для договора</description>
+      <param name="IM_CONTRACT_NUM" byValue="true">
+        <description>Номер договора АСВУД</description>
+        <type>ZRDD_DD_ID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_OOS_SCANS">
+        <description>Контейнер скан-образов для отправки на ООС</description>
+        <type>ZCL_RDD_OOS_FZ223_SCANS</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="CREATE_FOR_SUBCONTRACTOR" static="true" exposure="public">
+      <description>Получить для субподрядчика</description>
+      <param name="IM_CONTRACT_NUM" byValue="true">
+        <description>Номер договора АСВУД</description>
+        <type>ZRDD_DD_ID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_SUBCONTRACT_NUM" byValue="true">
+        <description>Номер субподрядчика</description>
+        <type>ZRDD_SUB_KONTRAGENT</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_OOS_SCANS">
+        <description>Контейнер скан-образов для отправки на ООС</description>
+        <type>ZCL_RDD_OOS_FZ223_SCANS</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="CREATE_FOR_CANCELLATION" static="true" exposure="public">
+      <description>Получить для расторжения</description>
+      <param name="IM_CONTRACT_NUM" byValue="true">
+        <description>Номер договора АСВУД</description>
+        <type>ZRDD_DD_ID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_OOS_SCANS">
+        <description>Контейнер скан-образов для отправки на ООС</description>
+        <type>ZCL_RDD_OOS_FZ223_SCANS</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="CREATE_FOR_PERFORMANCE" static="true" exposure="public">
+      <description>Получить для исполнения</description>
+      <param name="IM_CONTRACT_NUM" byValue="true">
+        <description>Номер договора АСВУД</description>
+        <type>ZRDD_DD_ID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_PARTNER_NUM" byValue="true">
+        <description>Номер контрагента</description>
+        <type>ZRDD_KONTRAGENT</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_REFERENCE_NUM" byValue="true">
+        <description>Полный ссылочный номер документа</description>
+        <type>ZRDD_PI_XBLNR</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_OOS_SCANS">
+        <description>Контейнер скан-образов для отправки на ООС</description>
+        <type>ZCL_RDD_OOS_FZ223_SCANS</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="GET_INSTANCE" static="true" exposure="public">
+      <description>Получить экземпляр</description>
+      <param name="IM_FORM" byValue="true">
+        <description>Номер формы по которой выгружаются данные типы договоров</description>
+        <type>ZEFZ223_ATTACH_OOS_FORM</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_OBJ_TYPE" byValue="true">
+        <description>Тип объекта</description>
+        <type>SWO_OBJTYP</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_OBJ_ID" byValue="true">
+        <description>Ид. объекта</description>
+        <type>SWO_OBJID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_INSTANCE">
+        <description>Контейнер скан-образов для отправки на ООС</description>
+        <type>ZCL_RDD_OOS_FZ223_SCANS</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+  </class>
+  <class name="ZRDD_CL_FZ223_ENHANCEMENT">
+    <description>Утилиты для расширений по ФЗ223</description>
+    <method name="GET_ENH_GROUP" static="true" exposure="public">
+      <description>Получить группу расширений по параметрам</description>
+      <param name="IM_BUKRS" byValue="true">
+        <description>Балансовая единица</description>
+        <type>BUKRS</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_AREA" byValue="true">
+        <description>Область расширений</description>
+        <type>ZRDD_ENH_AREA</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_ENH_GROUP">
+        <description>Группы расширений по ФЗ223</description>
+        <type>ZRDD_ENHGROUP</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="GET_DEFAULT_ENH_GROUP" static="true" exposure="public">
+      <description>Получить группу расширений по умолчанию</description>
+      <param name="IM_AREA" byValue="true">
+        <description>Область расширений</description>
+        <type>ZRDD_ENH_AREA</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_ENH_GROUP">
+        <description>Группы расширений по ФЗ223</description>
+        <type>ZRDD_ENHGROUP</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+  </class>
+  <class name="ZRDD_CL_FZ223_RDD_UTILS">
+    <description/>
+  </class>
+  <class name="ZRDD_CL_FZ223_UTILS">
+    <description>Утилиты для обработки договоров</description>
+    <method name="CALCULATE_CHARTAB_LENGTH" static="true" exposure="public">
+      <description>Вычислить  длину содержимого в бинарной таблице</description>
+      <param name="IM_TAB" byValue="true">
+        <description>Таблица с бинарным содержимым</description>
+        <type>STANDARD TABLE</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_LENGTH">
+        <description>Длина</description>
+        <type>I</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="GET_SCVD_NUM" static="true" exposure="public">
+      <description>Получить номер СЦВД по номеру АСВУД</description>
+      <param name="IM_RDD_ID" byValue="true">
+        <description>Идентификатор договорного документа</description>
+        <type>ZRDD_DD_ID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_SCVD_NUM">
+        <description>Номер договора СЦВД</description>
+        <type>ZDG_NUM0</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="LOG_PUSH" static="true" exposure="public">
+      <description>Положить сообщение в журнал</description>
+      <param name="IM_TYPE" byValue="true">
+        <description>Сообщения, тип сообщения</description>
+        <type>SYMSGTY</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_ID" byValue="true">
+        <description>Сообщения, класс сообщений</description>
+        <type>SYMSGID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_NO" byValue="true">
+        <description>Сообщения, номер сообщения</description>
+        <type>SYMSGNO</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_V1" byValue="true">
+        <description>Сообщения, переменная сообщения</description>
+        <type>SYMSGV</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_V2" byValue="true">
+        <description>Сообщения, переменная сообщения</description>
+        <type>SYMSGV</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_V3" byValue="true">
+        <description>Сообщения, переменная сообщения</description>
+        <type>SYMSGV</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_V4" byValue="true">
+        <description>Сообщения, переменная сообщения</description>
+        <type>SYMSGV</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="FIND_CREDITOR_INVOICE_EXT_REF" static="true" exposure="public">
+      <description>Найти счёт-фактуру по внешнему номеру и доп. признакам</description>
+      <param name="IM_EXTERNAL_REF" byValue="true">
+        <description>Внешний номер заявки по авиаперевозкам</description>
+        <type>ZZXBLNR50</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_COMPANY_CODE" byValue="true">
+        <description>Балансовая единица</description>
+        <type>BUKRS</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_CONTRACT_NUM" byValue="true">
+        <description>Номер договора АСВУД</description>
+        <type>ZRDD_DD_ID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_POSTING_DATE" byValue="true">
+        <description>Дата проводки в документе</description>
+        <type>BUDAT</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_CREDITOR_ID" byValue="true">
+        <description>Номер счета поставщика или кредитора</description>
+        <type>LIFNR</type>
+        <kind>importing</kind>
+      </param>
+      <param name="EX_BELNR" byValue="true">
+        <description>Номер документа счета-фактуры</description>
+        <type>RE_BELNR</type>
+        <kind>exporting</kind>
+      </param>
+      <param name="EX_GJAHR" byValue="true">
+        <description>Финансовый год</description>
+        <type>GJAHR</type>
+        <kind>exporting</kind>
+      </param>
+    </method>
+    <method name="GET_FILENAME_EXTENSION" static="true" exposure="public">
+      <description>Получить расширение файла</description>
+      <param name="IM_FILENAME" byValue="true">
+        <description>Имя файла</description>
+        <type>C</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_EXTENSION">
+        <description>Расишерений файла</description>
+        <type>STRING</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="PARSE_EXTERNAL_INVOICE_REF" static="true" exposure="public">
+      <description>Распарсить внешнюю ссылку на фактуру</description>
+      <param name="IM_XBLNR_EXTERNAL" byValue="true">
+        <description>Внешний номер документа для экспорта во внеш. сист.</description>
+        <type>C</type>
+        <kind>importing</kind>
+      </param>
+      <param name="EX_XBLNR" byValue="true">
+        <description>Ссылочный номер документа</description>
+        <type>C</type>
+        <kind>exporting</kind>
+      </param>
+      <param name="EX_BLDAT" byValue="true">
+        <description>Дата документа</description>
+        <type>BLDAT</type>
+        <kind>exporting</kind>
+      </param>
+    </method>
+    <method name="GET_CONTRACT_REG_NUM" static="true" exposure="public">
+      <description>Получить рег. номер договора</description>
+      <param name="IM_RDD_ID" byValue="true">
+        <description>Идентификатор договорного документа</description>
+        <type>ZRDD_DD_ID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_REG_NUM">
+        <description>Рег. номер договора</description>
+        <type>STRING</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="BUILD_EDIT_INFO" static="true" exposure="public">
+      <description>Сконструировать структуру "информация о редактировании"</description>
+      <param name="IM_PREVIOUS" byValue="true">
+        <description>Предыдущая Информация о редактировании позиции по форме</description>
+        <type>ZRDD_FZ223_STR_EDIT_INFO_V</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_EDIT_INFO">
+        <description>Информация о редактировании позиции по форме</description>
+        <type>ZRDD_FZ223_STR_EDIT_INFO_V</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="OUTDATED" static="true" exposure="public">
+      <description>Разрешимая самая поздняя дата публикации прошла</description>
+      <param name="IM_INFO_DATE" byValue="true">
+        <description>Дата данных для публикации</description>
+        <type>SY-DATUM</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_CHECK_DATE" byValue="true">
+        <description>Дата для проверки ( текущая )</description>
+        <type>SY-DATUM</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_INTERVAL" byValue="true">
+        <description>Максимально разрешимый интервал в днях</description>
+        <type>I</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_OUTDATED">
+        <description>Данные были просрочены</description>
+        <type>ABAP_BOOL</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="GET_USER_NAME" static="true" exposure="public">
+      <description>Получить имя пользователя</description>
+      <param name="IM_USERNAME" byValue="true">
+        <description>Система R/3: имя пользователя при регистрации</description>
+        <type>SY-UNAME</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_TEXT">
+        <description>Имя пользователя</description>
+        <type>STRING</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="CALC_MD5" static="true" exposure="public">
+      <description>Сгенеировать MD5</description>
+      <param name="IM_LENGTH" byValue="true">
+        <description>Длина</description>
+        <type>I</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_BIN_TAB" byValue="true">
+        <description>Таблица бинарных данных</description>
+        <type>STANDARD TABLE</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_HASH">
+        <description>MD5 Hash value</description>
+        <type>MD5_FIELDS-HASH</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+  </class>
+  <class name="ZRDD_CL_FZ223_CONST">
+    <description>Константы по ФЗ223</description>
+  </class>
+  <class name="ZRDD_CL_FZ223_DATA_CARRIER">
+    <description>Общий контейнер для переноса данных между событиями</description>
+    <method name="SET_DATA" exposure="public">
+      <description>Установить данные</description>
+      <param name="IM_OBJECT" byValue="true">
+        <description>Объект для получения данных</description>
+        <type>OBJECT</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_KEY" byValue="true">
+        <description>Дополнительный ключ данных</description>
+        <type>STRING</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_DATA_REF" byValue="true">
+        <description>Данные - ссылка</description>
+        <type>DATA</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_DATA">
+        <description>Данные</description>
+        <type>ANY</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="GET_DATA_REF" exposure="public">
+      <description>Получить ссылку на данные</description>
+      <param name="IM_OBJECT" byValue="true">
+        <description>Объект для получения данных</description>
+        <type>OBJECT</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_KEY" byValue="true">
+        <description>Дополнительный ключ данных</description>
+        <type>STRING</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_DATA">
+        <description>Данные</description>
+        <type>DATA</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="GET_DATA" exposure="public">
+      <description>Получить данные</description>
+      <param name="IM_OBJECT" byValue="true">
+        <description>Объект для получения данных</description>
+        <type>OBJECT</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_KEY" byValue="true">
+        <description>Дополнительный ключ данных</description>
+        <type>STRING</type>
+        <kind>importing</kind>
+      </param>
+      <param name="EX_DATA" byValue="true">
+        <description>Данные</description>
+        <type>ANY</type>
+        <kind>exporting</kind>
+      </param>
+    </method>
+  </class>
+  <class name="ZGOS_CL_ATTACH_SCANS_FZ223">
+    <description>Дополнительный функционал скан образов для ФЗ 223</description>
+    <method name="GET_ALV_F4" exposure="private">
+      <description>Получить настройки для поиска F4 по поля в ALV Grid</description>
+      <param name="RE_ALV_F4">
+        <description>ALV-Control: таблица для F4-обработки зарегистрир. полей</description>
+        <type>LVC_T_F4</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="GET_ALV_LAYOUT" exposure="private">
+      <description>Получить настройки вывода ALV Grid</description>
+      <param name="RE_LAYOUT">
+        <description>ALV-Control: структура формата</description>
+        <type>LVC_S_LAYO</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="ON_DOUBLE_CLICK" event_handler="true" exposure="private">
+      <description>Обработка двойного клика по полю</description>
+      <refClass>CL_GUI_ALV_GRID</refClass>
+      <refName>DOUBLE_CLICK</refName>
+      <param name="E_ROW">
+        <kind>importing</kind>
+      </param>
+      <param name="E_COLUMN">
+        <kind>importing</kind>
+      </param>
+      <param name="ES_ROW_NO">
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="EDIT_TEXT" exposure="private">
+      <description>Обработка комментария</description>
+      <param name="IM_OBJECT_ID" byValue="true">
+        <description>Ключ объекта</description>
+        <type>SWO_TYPEID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_DISPLAY_ONLY" byValue="true">
+        <description>ОТКРЫТЬ ТОЛЬКО ДЛЯ ПРОСМОТРА</description>
+        <type>ABAP_BOOL</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="ON_MENU_REQUEST" event_handler="true" exposure="private">
+      <description>Обработка запроса контекстного меню</description>
+      <refClass>CL_GUI_ALV_GRID</refClass>
+      <refName>CONTEXT_MENU_REQUEST</refName>
+      <param name="SENDER" byValue="true">
+        <kind>importing</kind>
+      </param>
+      <param name="E_OBJECT" byValue="true">
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="ON_MENU_SELECT" event_handler="true" exposure="private">
+      <description>Обработка выбора пункта в контекстном меню</description>
+      <refClass>CL_GUI_ALV_GRID</refClass>
+      <refName>USER_COMMAND</refName>
+      <param name="E_UCOMM" byValue="true">
+        <kind>importing</kind>
+      </param>
+      <param name="SENDER" byValue="true">
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="GET_CHOSEN_LINE" exposure="private">
+      <description>Получить выбранную строчку</description>
+      <param name="IM_GRID" byValue="true">
+        <description>ALV List Viewer</description>
+        <type>CL_GUI_ALV_GRID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_LINE">
+        <description>Структура отображения вложенных скан-образов</description>
+        <type>ZGOS_STR_ATTACH_LINKS</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="ON_CHANGE" event_handler="true" exposure="private">
+      <description>обработать изменение в таблице</description>
+      <refClass>CL_GUI_ALV_GRID</refClass>
+      <refName>DATA_CHANGED</refName>
+      <param name="ER_DATA_CHANGED" byValue="true">
+        <kind>importing</kind>
+      </param>
+      <param name="E_ONF4" byValue="true">
+        <kind>importing</kind>
+      </param>
+      <param name="E_ONF4_BEFORE" byValue="true">
+        <kind>importing</kind>
+      </param>
+      <param name="E_ONF4_AFTER" byValue="true">
+        <kind>importing</kind>
+      </param>
+      <param name="E_UCOMM" byValue="true">
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="GET_DIGITAL_TEXT" static="true" exposure="private">
+      <description>Получить текст для атрибута "цифровой"</description>
+      <param name="IM_VALUE" byValue="true">
+        <description>Значение атрибута цифровой</description>
+        <type>C</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_TEXT">
+        <description>Текст, 255 знаков</description>
+        <type>TEXT255</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="CONSTRUCTOR" exposure="public">
+      <description>CONSTRUCTOR</description>
+      <param name="IM_ATTACH_SCANS" byValue="true">
+        <description>Класс для прикрепления сканов</description>
+        <type>ZCL_GOS_ATTACH_SCANS</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="BUILD_FIELD_CATALOG" exposure="public">
+      <description>Построение каталога полей</description>
+      <param name="CH_FIELD_CATALOG" byValue="true">
+        <description>Каталог полей ListViewerControl</description>
+        <type>LVC_T_FCAT</type>
+        <kind>changing</kind>
+      </param>
+    </method>
+    <method name="PREPARE_LINE_FOR_SAVE" exposure="public">
+      <description>Подготовить данные для сохранения</description>
+      <param name="IM_OUTPUT_DATA" byValue="true">
+        <description>Структура отображения вложенных скан-образов</description>
+        <type>ZGOS_STR_ATTACH_LINKS</type>
+        <kind>importing</kind>
+      </param>
+      <param name="CH_GOS_INFO" byValue="true">
+        <description>Cкан-образ: статус/тип</description>
+        <type>ZGOS_INFO</type>
+        <kind>changing</kind>
+      </param>
+    </method>
+    <method name="PREPARE_LINE_FOR_DISPLAY" exposure="public">
+      <description>Подготовить данные для отображения</description>
+      <param name="IM_GOS_INFO" byValue="true">
+        <description>Cкан-образ: статус/тип</description>
+        <type>ZGOS_INFO</type>
+        <kind>importing</kind>
+      </param>
+      <param name="CH_OUTPUT" byValue="true">
+        <description>Структура отображения вложенных скан-образов</description>
+        <type>ZGOS_STR_ATTACH_LINKS</type>
+        <kind>changing</kind>
+      </param>
+    </method>
+    <method name="IS_LINE_CHANGED" exposure="public">
+      <description>Определить изменена ли строка</description>
+      <param name="IM_OUTPUT_DATA" byValue="true">
+        <description>Данные вывода</description>
+        <type>ZGOS_STR_ATTACH_LINKS</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_GOS_INFO" byValue="true">
+        <description>Cкан-образ: статус/тип</description>
+        <type>ZGOS_INFO</type>
+        <kind>importing</kind>
+      </param>
+      <param name="CH_CHANGED">
+        <description>Изменена ли строка</description>
+        <type>ABAP_BOOL</type>
+        <kind>changing</kind>
+      </param>
+    </method>
+    <method name="REGISTER_GRID_EVENTS" exposure="public">
+      <description>Зарегистрировать события для формы</description>
+      <param name="IM_GRID" byValue="true">
+        <description>ALV List Viewer</description>
+        <type>CL_GUI_ALV_GRID</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="FIELDS_FOR_EDIT_MODE" exposure="public">
+      <description>Добавить поля для обработки режима редактирования</description>
+      <param name="CH_FIELDNAMES" byValue="true">
+        <description>Множество имен полей</description>
+        <type>TTFIELDNAME</type>
+        <kind>changing</kind>
+      </param>
+    </method>
+    <method name="ON_TOOLBAR_FILL" event_handler="true" exposure="public">
+      <description>Обработать заполнение панели инструментов</description>
+      <refClass>CL_GUI_ALV_GRID</refClass>
+      <refName>TOOLBAR</refName>
+      <param name="E_OBJECT" byValue="true">
+        <kind>importing</kind>
+      </param>
+      <param name="E_INTERACTIVE" byValue="true">
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="ON_TOOLBAR_CLICK" event_handler="true" exposure="public">
+      <description>Обработка нажатия кнопки на панели интсрументов</description>
+      <refClass>CL_GUI_ALV_GRID</refClass>
+      <refName>USER_COMMAND</refName>
+      <param name="E_UCOMM" byValue="true">
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="GET_LOCK" exposure="public">
+      <description>Заблокирован ли скан для редактирования</description>
+      <param name="IM_OBJ_ID" byValue="true">
+        <description>Ид. объекта</description>
+        <type>SWO_TYPEID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_LOCK">
+        <description>Состовние вложения: блокировано \ разблокировано</description>
+        <type>ZGOS_ATTACH_LOCK</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="CLASS_CONSTRUCTOR" static="true" exposure="public">
+      <description>CLASS_CONSTRUCTOR</description>
+    </method>
+    <method name="GET_NOTE" static="true" exposure="public">
+      <description>Получить поля к комментарию</description>
+      <param name="IM_OBJECT_ID" byValue="true">
+        <description>Ключ объекта</description>
+        <type>SWO_TYPEID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_NOTE">
+        <description>Комментарий ко вложению</description>
+        <type>ZGOS_FZ223_STR_ATTACH_NOTE</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+  </class>
+  <class name="ZGOS_CL_SRV_RDD_FZ223_ATTACH">
+    <description>Скан-образы по ФЗ223</description>
+  </class>
+  <class name="ZGOS_CL_FZ223_SCANS">
+    <description>Контейнер скан-образов для отправки на ООС</description>
+    <method name="INITIALIZE_SCANS" exposure="private">
+      <description>Инициализировать контейнер скан-образов</description>
+    </method>
+    <method name="FILL_ATTACHMENT_DATA" exposure="private">
+      <description>Сгенерировать данные для вложений</description>
+    </method>
+    <method name="GENERATE_NAMES" exposure="private">
+      <description>Сгенерирать имена файлов для вложений</description>
+    </method>
+    <method name="RETRIEVE_CONTENT" exposure="private">
+      <description>Получить содержимое файлов</description>
+    </method>
+    <method name="IS_ATTACHMENT_VALID" exposure="private">
+      <description>Проверить, что вложение подходит для выгрузки</description>
+      <param name="IM_HEADER" byValue="true">
+        <description>Данные для ООС - вложения к форме отправки - заголовок</description>
+        <type>ZGOS_FZ223_STR_ATTACH_HEAD</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_VALID">
+        <description>Вложение соответствует</description>
+        <type>ABAP_BOOL</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="CALCULATE_CHARTAB_LENGTH" exposure="private">
+      <description>Вычислить  длину содержимого в бинарной таблице</description>
+      <param name="IM_TAB" byValue="true">
+        <description>Таблица с бинарным содержимым</description>
+        <type>STANDARD TABLE</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_LENGTH">
+        <description>Длина</description>
+        <type>I</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="CONV_CHAR_TO_BIN" exposure="private">
+      <description>Конвертация строковой таблицы в бинарную</description>
+      <param name="IM_CHAR_TAB" byValue="true">
+        <description>SAPoffice: простой список с длиной столбца 255</description>
+        <type>SWUOCONTTAB</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_BIN_TAB">
+        <description>Таблица с бинарным содержимым вложения</description>
+        <type>ZRDD_FZ223_TAB_ATTACH_BIN</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="RETRIEVE_SAVED" exposure="private">
+      <description>Получить уже сохранённые данные о вложениях</description>
+    </method>
+    <method name="BUILD_LOCK_MESSAGE" exposure="private">
+      <description>Сконструировать сообщение для блокировки</description>
+      <param name="IM_ATTACHMENT" byValue="true">
+        <description>Вся информация о вложениях по ФЗ223</description>
+        <type>ZRDD_FZ223_STR_ATTACHMENT</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_MESSAGE">
+        <description>Строки текста_T</description>
+        <type>TLINE_T</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="FILL_ATTACHMENT_MOD_STATUS" exposure="private">
+      <description>Заполнить статус изменения для вложений</description>
+    </method>
+    <method name="FILL_DELETED_ATTACHMENTS" exposure="private">
+      <description>заполнить удалённые вложения</description>
+    </method>
+    <method name="FILL_ACTUAL_DATA" exposure="private">
+      <description>заполнить актуальные вложения</description>
+    </method>
+    <method name="DELETE" exposure="public">
+      <refClass>ZIF_PERSISTENT_DELETABLE</refClass>
+      <refName>DELETE</refName>
+    </method>
+    <method name="GET_ATTACHMENT_DATA" exposure="public">
+      <refClass>ZRDD_IF_FZ223_SCANS</refClass>
+      <refName>GET_ATTACHMENT_DATA</refName>
+    </method>
+    <method name="GET_ID" exposure="public">
+      <refClass>ZIF_PERSISTENT_IDENTIFIABLE</refClass>
+      <refName>GET_ID</refName>
+    </method>
+    <method name="GET_ITEM_STATUS" exposure="public">
+      <refClass>ZRDD_IF_FZ223_SCANS</refClass>
+      <refName>GET_ITEM_STATUS</refName>
+    </method>
+    <method name="GET_STATUS" exposure="public">
+      <refClass>ZRDD_IF_FZ223_SCANS</refClass>
+      <refName>GET_STATUS</refName>
+    </method>
+    <method name="GET_SUMMARY_SIZE" exposure="public">
+      <refClass>ZRDD_IF_FZ223_SCANS</refClass>
+      <refName>GET_SUMMARY_SIZE</refName>
+    </method>
+    <method name="REFRESH" exposure="public">
+      <refClass>ZIF_PERSISTENT_REFRESHABLE</refClass>
+      <refName>REFRESH</refName>
+    </method>
+    <method name="SAVE" exposure="public">
+      <refClass>ZIF_PERSISTENT_SAVABLE</refClass>
+      <refName>SAVE</refName>
+    </method>
+    <method name="SET_FETCH_BINARY" exposure="public">
+      <refClass>ZRDD_IF_FZ223_SCANS</refClass>
+      <refName>SET_FETCH_BINARY</refName>
+    </method>
+    <method name="CONSTRUCTOR" exposure="public">
+      <description>CONSTRUCTOR</description>
+      <param name="IM_FORM" byValue="true">
+        <description>Номер формы по которой выгружаются данные типы договоров</description>
+        <type>ZGOS_ATTACH_OOS_FORM</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_OBJ_TYPE" byValue="true">
+        <description>Тип объекта</description>
+        <type>SWO_OBJTYP</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_OBJ_ID" byValue="true">
+        <description>Ид. объекта</description>
+        <type>SWO_OBJID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_FETCH_BINARY" byValue="true">
+        <description>Получать содержимое файлов?</description>
+        <type>ABAP_BOOL</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="SET_CONTRACT_NUM" exposure="public">
+      <description>Установить регистрационный номер договора</description>
+      <param name="IM_RDD_ID" byValue="true">
+        <description>Регистрационный номер договора</description>
+        <type>ZRDD_DD_ID</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="GET_ATTACHMENT_HEADERS" exposure="public">
+      <description>Получить заголовки всех скан-образов</description>
+      <param name="RE_HEADERS">
+        <description>Данные вложений для ФЗ223 - заголовки</description>
+        <type>ZRDD_FZ223_TAB_ATTACH_HEAD</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="CLASS_CONSTRUCTOR" static="true" exposure="public">
+      <description>CLASS_CONSTRUCTOR</description>
+    </method>
+    <method name="CREATE_FOR_CONTRACT" static="true" exposure="public">
+      <description>Получить для договора</description>
+      <param name="IM_CONTRACT_NUM" byValue="true">
+        <description>Номер договора АСВУД</description>
+        <type>ZRDD_DD_ID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_OOS_SCANS">
+        <description>Контейнер скан-образов для отправки на ООС</description>
+        <type>ZGOS_CL_FZ223_SCANS</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="CREATE_FOR_SUBCONTRACTOR" static="true" exposure="public">
+      <description>Получить для субподрядчика</description>
+      <param name="IM_CONTRACT_NUM" byValue="true">
+        <description>Номер договора АСВУД</description>
+        <type>ZRDD_DD_ID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_SUBCONTRACT_NUM" byValue="true">
+        <description>Номер субподрядчика</description>
+        <type>ZRDD_SUB_KONTRAGENT</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_OOS_SCANS">
+        <description>Контейнер скан-образов для отправки на ООС</description>
+        <type>ZGOS_CL_FZ223_SCANS</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="CREATE_FOR_CANCELLATION" static="true" exposure="public">
+      <description>Получить для расторжения</description>
+      <param name="IM_CONTRACT_NUM" byValue="true">
+        <description>Номер договора АСВУД</description>
+        <type>ZRDD_DD_ID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_OOS_SCANS">
+        <description>Контейнер скан-образов для отправки на ООС</description>
+        <type>ZGOS_CL_FZ223_SCANS</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="CREATE_FOR_PERFORMANCE" static="true" exposure="public">
+      <description>Получить для исполнения</description>
+      <param name="IM_CONTRACT_NUM" byValue="true">
+        <description>Номер договора АСВУД</description>
+        <type>ZRDD_DD_ID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_PARTNER_NUM" byValue="true">
+        <description>Номер контрагента</description>
+        <type>ZRDD_KONTRAGENT</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_REFERENCE_NUM" byValue="true">
+        <description>Полный ссылочный номер документа</description>
+        <type>ZRDD_PI_XBLNR</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_OOS_SCANS">
+        <description>Контейнер скан-образов для отправки на ООС</description>
+        <type>ZGOS_CL_FZ223_SCANS</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="GET_INSTANCE" static="true" exposure="public">
+      <description>Получить экземпляр</description>
+      <param name="IM_FORM" byValue="true">
+        <description>Номер формы по которой выгружаются данные типы договоров</description>
+        <type>ZGOS_ATTACH_OOS_FORM</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_OBJ_TYPE" byValue="true">
+        <description>Тип объекта</description>
+        <type>SWO_OBJTYP</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_OBJ_ID" byValue="true">
+        <description>Ид. объекта</description>
+        <type>SWO_OBJID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_INSTANCE">
+        <description>Контейнер скан-образов для отправки на ООС</description>
+        <type>ZGOS_CL_FZ223_SCANS</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+  </class>
+  <class name="ZCL_IM_RDD_FZ223_VALID">
+    <description>Класс внедрения для BAdI-внедрения ZRDD_FZ223_VALID</description>
+  </class>
+  <class name="ZCL_IM__BADI_SCN_CHK">
+    <description>Класс внедрения для BAdI-внедрения Z_BADI_FZ223_SCN_CHK</description>
+  </class>
+  <class name="ZRDD_CL_FZ223_SCANS_F27">
+    <description>Скан-образы для формы субпорядчика</description>
+    <method name="GET_ATTACHMENT_DATA" exposure="private">
+      <refClass>ZRDD_IF_FZ223_SCANS</refClass>
+      <refName>GET_ATTACHMENT_DATA</refName>
+    </method>
+    <method name="GET_STATUS" exposure="private">
+      <refClass>ZRDD_IF_FZ223_SCANS</refClass>
+      <refName>GET_STATUS</refName>
+    </method>
+    <method name="READ_ATTACHMENT" exposure="private">
+      <description>Получить данные о вложении</description>
+    </method>
+    <method name="READ_CURRENT_DATA" exposure="private">
+      <description>Прочитать текущие данные</description>
+    </method>
+    <method name="READ_SAVED_DATA" exposure="private">
+      <description>Прочитать сохранённые данные</description>
+    </method>
+    <method name="GENERATE_NAME" exposure="private">
+      <description>Сгенерировать имя</description>
+    </method>
+    <method name="CONSTRUCTOR" exposure="public">
+      <description>CONSTRUCTOR</description>
+      <param name="IM_FORM_DATA" byValue="true">
+        <description>Документы для передачи на ООС (сведения о субподр.) расшир.</description>
+        <type>ZRDDOC_F27_EXT_STR</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="CREATE_INSTANCE" static="true" exposure="public">
+      <description>Получить экземпляр</description>
+      <param name="IM_FORM_DATA" byValue="true">
+        <description>Документы для передачи на ООС (сведения о субподр.) расшир.</description>
+        <type>ZRDDOC_F27_EXT_STR</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_INSTANCE">
+        <description>Скан-образы для формы субпорядчика</description>
+        <type>ZRDD_CL_FZ223_SCANS_F27</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+  </class>
+  <class name="ZGOS_CL_ATTACH_LOCK">
+    <description>Блокировка для вложения</description>
+    <method name="RAISE_AUTHORITY_ERROR" exposure="private">
+      <description>Вызвать ошибку проверки полномочий</description>
+      <param name="IM_LOCK" byValue="true">
+        <description>Состовние вложения: блокировано \ разблокировано</description>
+        <type>ZGOS_ATTACH_LOCK</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="CREATE_NOTE" exposure="private">
+      <description>Создать заметку</description>
+      <param name="IM_VERSION" byValue="true">
+        <description>Архивная версия записи</description>
+        <type>ZSGL_ARHIV</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_MESSAGE_DIALOG" byValue="true">
+        <description>С диалогом</description>
+        <type>ABAP_BOOL</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_MESSAGE" byValue="true">
+        <description>Строки текста_T</description>
+        <type>TLINE_T</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="AUTHORITY_CHECK" exposure="private">
+      <description>Проверка полномочий на установку статуса</description>
+      <param name="IM_LOCK" byValue="true">
+        <description>Состовние вложения: блокировано \ разблокировано</description>
+        <type>ZGOS_ATTACH_LOCK</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_AUTHORIZED">
+        <description>Авторизация пройдена успешно</description>
+        <type>ABAP_BOOL</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="RETRIEVE_REQUESTED" static="true" exposure="private">
+      <description>Получить новые запрошенные записи</description>
+    </method>
+    <method name="SAVE_ALL" event_handler="true" static="true" exposure="private">
+      <description>Сохранить все нужные записи</description>
+      <refClass>CL_OS_TRANSACTION_END_NOTIFIER</refClass>
+      <refName>COMMIT_REQUESTED</refName>
+    </method>
+    <method name="DELETE" exposure="public">
+      <refClass>ZIF_PERSISTENT_DELETABLE</refClass>
+      <refName>DELETE</refName>
+    </method>
+    <method name="GET_ID" exposure="public">
+      <refClass>ZIF_PERSISTENT_IDENTIFIABLE</refClass>
+      <refName>GET_ID</refName>
+    </method>
+    <method name="REFRESH" exposure="public">
+      <refClass>ZIF_PERSISTENT_REFRESHABLE</refClass>
+      <refName>REFRESH</refName>
+    </method>
+    <method name="SAVE" exposure="public">
+      <refClass>ZIF_PERSISTENT_SAVABLE</refClass>
+      <refName>SAVE</refName>
+    </method>
+    <method name="CONSTRUCTOR" exposure="public">
+      <description>CONSTRUCTOR</description>
+      <param name="IM_ID" byValue="true">
+        <description>Ключ объекта</description>
+        <type>SWO_TYPEID</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="GET_LOCK" exposure="public">
+      <description>Получить состояние блокировки</description>
+      <param name="RE_LOCK">
+        <description>Скан заблокирован</description>
+        <type>ZGOS_ATTACH_LOCK</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="SET_LOCK" exposure="public">
+      <description>Установить состояние блокировки</description>
+      <param name="IM_LOCK" byValue="true">
+        <description>Состовние вложения: блокировано \ разблокировано</description>
+        <type>ZGOS_ATTACH_LOCK</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_MESSAGE_DIALOG" byValue="true">
+        <description>Ввести сообщение в диалоге</description>
+        <type>ABAP_BOOL</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_MESSAGE" byValue="true">
+        <description>Текст собощения</description>
+        <type>TLINE_T</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="DISPLAY_NOTE" exposure="public">
+      <description>Просмотреть текст заметки</description>
+    </method>
+    <method name="IS_SET" exposure="public">
+      <description>Блокировка хотя бы раз устанавливалась для вложения ?</description>
+      <param name="RE_SET">
+        <description>Блокировка устанавливалась</description>
+        <type>ABAP_BOOL</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="CLASS_CONSTRUCTOR" static="true" exposure="public">
+      <description>CLASS_CONSTRUCTOR</description>
+    </method>
+    <method name="GET_INSTANCE" static="true" exposure="public">
+      <description>Создать экземпляр \ flyweight</description>
+      <param name="IM_ID" byValue="true">
+        <description>Ключ объекта</description>
+        <type>SWO_TYPEID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_INSTANCE">
+        <description>Блокировка для вложения</description>
+        <type>ZGOS_CL_ATTACH_LOCK</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="REFRESH_ALL" static="true" exposure="public">
+      <description>Обновить все объекты</description>
+    </method>
+  </class>
+  <interface name="ZIF_EX_RDD_ATTACHMENT">
+    <description>BAdI-интерфейс ZIF_EX_RDD_ATTACHMENT</description>
+    <method name="SET_DD_OBJECT" exposure="public">
+      <description>Передать объект с данными договора</description>
+      <param name="FLT_VAL">
+        <description>Параметр FLT_VAL метода SET_DD_OBJECT</description>
+        <type>ZRDD_ENHGROUP</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_DD" byValue="true">
+        <description>Базовый класс для Договорного документа</description>
+        <type>ZRDD_CL_DD</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="ADD_FILE" exposure="public">
+      <description>Добавить файл как расширение</description>
+      <param name="FLT_VAL">
+        <description>Параметр FLT_VAL метода ADD_FILE</description>
+        <type>ZRDD_ENHGROUP</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="ADD_SUBCNTR_FILE" exposure="public">
+      <description>Добавить вложение к субподряду</description>
+      <param name="IM_SCREEN_OBJ" byValue="true">
+        <description>Базовый класс для обработки экранов</description>
+        <type>Z_CL_SCREEN</type>
+        <kind>importing</kind>
+      </param>
+      <param name="FLT_VAL">
+        <description>Параметр FLT_VAL метода ADD_SUBCNTR_FILE</description>
+        <type>ZRDD_ENHGROUP</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="MANAGE_SUBCNTR_FILES" exposure="public">
+      <description>Обработать вложения к субподряду</description>
+      <param name="FLT_VAL">
+        <description>Параметр FLT_VAL метода MANAGE_SUBCNTR_FILES</description>
+        <type>ZRDD_ENHGROUP</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_SCREEN_OBJ" byValue="true">
+        <description>Базовый класс для обработки экранов</description>
+        <type>Z_CL_SCREEN</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+  </interface>
+  <interface name="ZIF_EX_RDD_ATTACH_DISPLAY">
+    <description>BAdI-интерфейс ZIF_EX_RDD_ATTACH_DISPLAY</description>
+    <method name="GET_SETTINGS" exposure="public">
+      <description>Получение настроек отображения</description>
+      <param name="FLT_VAL">
+        <description>Тип объекта</description>
+        <type>OJ_NAME</type>
+        <kind>importing</kind>
+      </param>
+      <param name="EX_EMBEDDED" byValue="true">
+        <description>Встроенный режим поддерживается?</description>
+        <type>ABAP_BOOL</type>
+        <kind>exporting</kind>
+      </param>
+      <param name="EX_DETACHED" byValue="true">
+        <description>Независимый режим поддерживается?</description>
+        <type>ABAP_BOOL</type>
+        <kind>exporting</kind>
+      </param>
+    </method>
+    <method name="GET_EMBEDDED_COMPONENT" exposure="public">
+      <description>Получение компоненты для отображения вложений</description>
+      <param name="FLT_VAL">
+        <description>Тип объекта</description>
+        <type>OJ_NAME</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_CONTAINER" byValue="true">
+        <description>Abstract Container for GUI Controls</description>
+        <type>CL_GUI_CONTAINER</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_READ_ONLY">
+        <description>Отобразить только для чтения?</description>
+        <type>ABAP_BOOL</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_COMPONENT">
+        <description>Proxy Class for Control in GUI</description>
+        <type>CL_GUI_CONTROL</type>
+        <kind>changing</kind>
+      </param>
+    </method>
+    <method name="RUN_DETACHED" exposure="public">
+      <description>Запуск отображения в откреплённом режиме</description>
+      <param name="FLT_VAL">
+        <description>Параметр FLT_VAL метода RUN_DETACHED</description>
+        <type>OJ_NAME</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_OBJECT_ID" byValue="true">
+        <description>Идентификатор объекта с вложениями</description>
+        <type>STRING</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_READ_ONLY" byValue="true">
+        <description>Запуск в режиме для просмотра</description>
+        <type>ABAP_BOOL</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="SET_CONTROLLER" exposure="public">
+      <description>Регистрация обработчиков для контроллера</description>
+      <param name="IM_CONTROLLER" byValue="true">
+        <description>Контроллер</description>
+        <type>ZIF_RDD_ATTACH_CONTROLLER</type>
+        <kind>importing</kind>
+      </param>
+      <param name="FLT_VAL">
+        <description>Параметр FLT_VAL метода SET_CONTROLLER</description>
+        <type>OJ_NAME</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+  </interface>
+  <interface name="ZIF_EX_RDD_FZ223_INTEGR">
+    <description>BAdI-интерфейс ZIF_EX_RDD_FZ223_INTEGR</description>
+    <method name="MAP_CONTRACT" exposure="public">
+      <description>Сопоставление данных для 26 формы</description>
+      <param name="IM_FORM_DB" byValue="true">
+        <description>Документы АСВУД для передачи на ООС (сведения о договоре)</description>
+        <type>ZRDDOC_F26</type>
+        <kind>importing</kind>
+      </param>
+      <param name="CH_FORM_EXPORT" byValue="true">
+        <description>Данные на ООС по форме 26 (сведения о договоре) контракт</description>
+        <type>ZRDD_CONTRACT_STR_FORM_26</type>
+        <kind>changing</kind>
+      </param>
+    </method>
+    <method name="MAP_SUBCONTRACT" exposure="public">
+      <description>Сопоставление данных для 27 формы</description>
+      <param name="IM_FORM_DB" byValue="true">
+        <description>Документы АСВУД для передачи на ООС (сведения о субподр.)</description>
+        <type>ZRDDOC_F27</type>
+        <kind>importing</kind>
+      </param>
+      <param name="CH_FORM_EXPORT" byValue="true">
+        <description>Данные на ООС по форме 27 (сведения о субподр.) заголовок</description>
+        <type>ZRDD_CONTRACT_STR_FORM_27</type>
+        <kind>changing</kind>
+      </param>
+    </method>
+    <method name="MAP_CANCELLATION" exposure="public">
+      <description>Сопоставление данных для 28 формы</description>
+      <param name="IM_FORM_DB" byValue="true">
+        <description>Документы АСВУД для передачи на ООС (сведения о расторж.)</description>
+        <type>ZRDDOC_F28</type>
+        <kind>importing</kind>
+      </param>
+      <param name="CH_FORM_EXPORT" byValue="true">
+        <description>Данные на ООС по форме 28 (сведения о расторж.) заголовок</description>
+        <type>ZRDD_CONTRACT_STR_FORM_28</type>
+        <kind>changing</kind>
+      </param>
+    </method>
+    <method name="MAP_PERFORMANCE" exposure="public">
+      <description>Сопоставление данных для 29 формы</description>
+      <param name="IM_FORM_DB" byValue="true">
+        <description>Документы для передачи на ООС (сведения об исполнении)</description>
+        <type>ZRDDOC_F29</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_FORM_DB_POS" byValue="true">
+        <description>Позиции пакета сведения об исполнении</description>
+        <type>ZRDDOC_F29P_TAB</type>
+        <kind>importing</kind>
+      </param>
+      <param name="CH_FORM_EXPORT" byValue="true">
+        <description>Данные на ООС по форме 29 (сведения об исполн.) заголовок</description>
+        <type>ZRDD_CONTRACT_STR_FORM_29</type>
+        <kind>changing</kind>
+      </param>
+    </method>
+  </interface>
+  <interface name="ZIF_EX_RDD_FZ223_VIEW">
+    <description>BAdI-интерфейс ZIF_EX_RDD_FZ223_VIEW</description>
+    <method name="MODIFY_FIELD_CATALOG" exposure="public">
+      <description>Изменения каталога полей для просмотра дерева</description>
+      <param name="CH_FCAT" byValue="true">
+        <description>Каталог полей дерева</description>
+        <type>LVC_T_FCAT</type>
+        <kind>changing</kind>
+      </param>
+    </method>
+    <method name="ADD_NODE" exposure="public">
+      <description>Добавление узла</description>
+      <param name="IM_FORM" byValue="true">
+        <description>Номер формы по которой выгружаются данные типы договоров</description>
+        <type>ZGOS_ATTACH_OOS_FORM</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_FORM_DATA" byValue="true">
+        <description>Данные формы</description>
+        <type>ANY</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_POSITION" byValue="true">
+        <description>Срока позиции</description>
+        <type>ABAP_BOOL</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_CARRIER" byValue="true">
+        <description>Контейнер данных для передачи в последующее событие</description>
+        <type>ZRDD_CL_FZ223_DATA_CARRIER</type>
+        <kind>importing</kind>
+      </param>
+      <param name="CH_ITEM_LAYOUT" byValue="true">
+        <description>Вывод ячеек</description>
+        <type>LVC_T_LAYI</type>
+        <kind>changing</kind>
+      </param>
+      <param name="CH_NODE_DATA" byValue="true">
+        <description>Данные 223ФЗ для ALV TREE</description>
+        <type>ZRDD_STR_DD_223FZ_TREE</type>
+        <kind>changing</kind>
+      </param>
+      <param name="CH_NODE_TEXT" byValue="true">
+        <description>Текст узла</description>
+        <type>LVC_VALUE</type>
+        <kind>changing</kind>
+      </param>
+      <param name="CH_NODE_LAYOUT" byValue="true">
+        <description>Вывод узла</description>
+        <type>LVC_S_LAYN</type>
+        <kind>changing</kind>
+      </param>
+    </method>
+    <method name="REGISTER" exposure="public">
+      <description>Регистрация обработки событий</description>
+      <param name="IM_VIEW" byValue="true">
+        <description>Древовидный диалог по выгрузке по ФЗ223</description>
+        <type>ZRDD_IF_FZ223_TREE_VIEW</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="VALIDATE_FORM" exposure="public">
+      <description>Проверка на ошибки</description>
+      <param name="IM_FORM" byValue="true">
+        <description>Номер формы по которой выгружаются данные типы договоров</description>
+        <type>ZGOS_ATTACH_OOS_FORM</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_POSITION" byValue="true">
+        <description>Позиция формы?</description>
+        <type>ABAP_BOOL</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_LOG_PUSH" byValue="true">
+        <description>Добавлять описание ошибки в лог</description>
+        <type>ABAP_BOOL</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_FORM_DATA" byValue="true">
+        <description>Данные формы</description>
+        <type>ANY</type>
+        <kind>importing</kind>
+      </param>
+      <param name="CH_ERROR" byValue="true">
+        <description>Есть ошибки?</description>
+        <type>ABAP_BOOL</type>
+        <kind>changing</kind>
+      </param>
+      <param name="CH_WARNING" byValue="true">
+        <description>Есть предупреждения?</description>
+        <type>ABAP_BOOL</type>
+        <kind>changing</kind>
+      </param>
+    </method>
+  </interface>
+  <interface name="ZIF_FZ223_TREE_VIEW">
+    <description>Древовидный диалог по выгрузке по ФЗ223</description>
+    <method name="GET_CHOSEN_NODES" exposure="public">
+      <description>Получить выбранные узлы</description>
+      <param name="IM_CHECKBOXES" byValue="true">
+        <description>Позиции по установленным чекбоксам</description>
+        <type>ABAP_BOOL</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_NODE_SEL" byValue="true">
+        <description>Позиции по выбранным узлам</description>
+        <type>ABAP_BOOL</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_ITEM_SEL" byValue="true">
+        <description>Позиции по выбранным ячейкам</description>
+        <type>ABAP_BOOL</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_NODES">
+        <description>ALV-Tree-Control: таблица узлов</description>
+        <type>LVC_T_NKEY</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+  </interface>
+  <interface name="ZIF_PERSISTENT">
+    <description>Объект с состоянием в СУБД</description>
+    <method name="DELETE" exposure="public">
+      <refClass>ZIF_PERSISTENT_DELETABLE</refClass>
+      <refName>DELETE</refName>
+    </method>
+    <method name="GET_ID" exposure="public">
+      <refClass>ZIF_PERSISTENT_IDENTIFIABLE</refClass>
+      <refName>GET_ID</refName>
+    </method>
+    <method name="REFRESH" exposure="public">
+      <refClass>ZIF_PERSISTENT_REFRESHABLE</refClass>
+      <refName>REFRESH</refName>
+    </method>
+    <method name="SAVE" exposure="public">
+      <refClass>ZIF_PERSISTENT_SAVABLE</refClass>
+      <refName>SAVE</refName>
+    </method>
+  </interface>
+  <interface name="ZIF_PERSISTENT_DELETABLE">
+    <description>Объект в СУБД - возможно удаление</description>
+    <method name="DELETE" exposure="public">
+      <description>Удалить данные из БД</description>
+    </method>
+  </interface>
+  <interface name="ZIF_PERSISTENT_IDENTIFIABLE">
+    <description>Объект в СУБД - получение идентификатора</description>
+    <method name="GET_ID" exposure="public">
+      <description>Получить идентификатор</description>
+      <param name="RE_ID">
+        <description>Получение идентификатора</description>
+        <type>STRING</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+  </interface>
+  <interface name="ZIF_PERSISTENT_REFRESHABLE">
+    <description>Объект в СУБД - возможно обновление</description>
+    <method name="REFRESH" exposure="public">
+      <description>Обновить данные из СУБД</description>
+    </method>
+  </interface>
+  <interface name="ZIF_PERSISTENT_SAVABLE">
+    <description>Объект в СУБД - возможно сохранение</description>
+    <method name="SAVE" exposure="public">
+      <description>Сохранить данные</description>
+    </method>
+  </interface>
+  <interface name="ZIF_RDD_ATTACH_CONTROLLER">
+    <description>Обработка экрана приложений</description>
+  </interface>
+  <interface name="ZIF_RDD_VALIDATION">
+    <description>Обработка проверок</description>
+    <method name="ERROR" exposure="public">
+      <description>Добавить ошибку</description>
+    </method>
+    <method name="WARNING" exposure="public">
+      <description>Добавить предупреждение</description>
+    </method>
+    <method name="INFO" exposure="public">
+      <description>Добавить информационное сообщение</description>
+    </method>
+    <method name="HAS_ERRORS" exposure="public">
+      <description>Есть ли ошибки</description>
+      <param name="RE_RESULT">
+        <description>Результат вызова</description>
+        <type>ABAP_BOOL</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="HAS_WARNINGS" exposure="public">
+      <description>Есть ли предупреждения</description>
+      <param name="RE_RESULT">
+        <description> Результат</description>
+        <type>ABAP_BOOL</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+  </interface>
+  <interface name="ZRDD_IF_VALIDATION">
+    <description>Обработка проверок</description>
+    <method name="ERROR" exposure="public">
+      <description>Добавить ошибку</description>
+    </method>
+    <method name="WARNING" exposure="public">
+      <description>Добавить предупреждение</description>
+    </method>
+    <method name="INFO" exposure="public">
+      <description>Добавить информационное сообщение</description>
+    </method>
+    <method name="HAS_ERRORS" exposure="public">
+      <description>Есть ли ошибки</description>
+      <param name="RE_RESULT">
+        <description>Результат вызова</description>
+        <type>ABAP_BOOL</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="HAS_WARNINGS" exposure="public">
+      <description>Есть ли предупреждения</description>
+      <param name="RE_RESULT">
+        <description> Результат</description>
+        <type>ABAP_BOOL</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+  </interface>
+  <interface name="ZRDD_IF_FZ223_TREE_VIEW">
+    <description>Древовидный диалог по выгрузке по ФЗ223</description>
+    <method name="GET_CHOSEN_NODES" exposure="public">
+      <description>Получить выбранные узлы</description>
+      <param name="IM_CHECKBOXES" byValue="true">
+        <description>Позиции по установленным чекбоксам</description>
+        <type>ABAP_BOOL</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_NODE_SEL" byValue="true">
+        <description>Позиции по выбранным узлам</description>
+        <type>ABAP_BOOL</type>
+        <kind>importing</kind>
+      </param>
+      <param name="IM_ITEM_SEL" byValue="true">
+        <description>Позиции по выбранным ячейкам</description>
+        <type>ABAP_BOOL</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_NODES">
+        <description>ALV-Tree-Control: таблица узлов</description>
+        <type>LVC_T_NKEY</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+  </interface>
+  <interface name="ZRDD_IF_FZ223_SCANS">
+    <description>Контейнер скан-образов</description>
+    <method name="DELETE" exposure="public">
+      <refClass>ZIF_PERSISTENT</refClass>
+      <refName>DELETE</refName>
+    </method>
+    <method name="GET_ID" exposure="public">
+      <refClass>ZIF_PERSISTENT</refClass>
+      <refName>GET_ID</refName>
+    </method>
+    <method name="REFRESH" exposure="public">
+      <refClass>ZIF_PERSISTENT</refClass>
+      <refName>REFRESH</refName>
+    </method>
+    <method name="SAVE" exposure="public">
+      <refClass>ZIF_PERSISTENT</refClass>
+      <refName>SAVE</refName>
+    </method>
+    <method name="GET_STATUS" exposure="public">
+      <description>Получить статус вложений относительно передачи</description>
+      <param name="RE_STATUS">
+        <description>статус вложений</description>
+        <type>I</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="GET_SUMMARY_SIZE" exposure="public">
+      <description>Получить суммарный объём всех вложений</description>
+      <param name="RE_SIZE">
+        <description>Суммарный объём</description>
+        <type>I</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="GET_ATTACHMENT_DATA" exposure="public">
+      <description>Получить данные по скан-образам</description>
+      <param name="IM_INCLUDE_DELETED" byValue="true">
+        <description>Включая удалённые записи</description>
+        <type>ABAP_BOOL</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_ATTACHMENT_DATA">
+        <description>Данные вложений для ФЗ223</description>
+        <type>ZRDD_FZ223_TAB_ATTACHMENT</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="SET_FETCH_BINARY" exposure="public">
+      <description>Установить флаг получения бин. содержимого</description>
+      <param name="IM_FETCH_BINARY" byValue="true">
+        <description>Получить бин. содержимое</description>
+        <type>ABAP_BOOL</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+    <method name="GET_ITEM_STATUS" exposure="public">
+      <description>Получить статус по единичному скан-образу</description>
+      <param name="IM_OBJ_ID" byValue="true">
+        <description>Ключ объекта</description>
+        <type>SWO_TYPEID</type>
+        <kind>importing</kind>
+      </param>
+      <param name="RE_STATUS">
+        <description>Статус позиции</description>
+        <type>I</type>
+        <kind>returning</kind>
+      </param>
+    </method>
+    <method name="DISPLAY_ATTACHMENT" exposure="public">
+      <description>Просмотреть запись</description>
+      <param name="IM_OBJ_ID" byValue="true">
+        <description>Тип объекта</description>
+        <type>SWO_TYPEID</type>
+        <kind>importing</kind>
+      </param>
+    </method>
+  </interface>
+  <interface name="ZRDD_IF_ATTACH_CONTROLLER">
+    <description>Обработка экрана приложений</description>
+  </interface>
+</types>
+
