@@ -24,11 +24,11 @@ main = do
   _ <- runX $
     readDocument [withValidate no] src
     >>>
-    root [] [
-      deep ( 
-        (isElem >>> hasName "types" >>> addAttr "xxx" "yyy" >>> traceValue 0 (show. XmlNode.getName)) <+> isText) 
-      ]
+    root [] [ deep ( isElem >>> hasName "types" >>> process) ]
     >>>
     writeDocument[withIndent yes] dst 
   return ()
+  where
+    types = mkName "rororo"
+    process = eelem "rororo"
 
