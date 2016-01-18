@@ -67,5 +67,6 @@ $RECYCLE.BIN/
 *.lnk
 
 #results
-*.docx
+*.docx.xml
 output.xml
+output.odt
