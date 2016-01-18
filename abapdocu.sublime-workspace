@@ -1,0 +1,905 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Cata",
+				"CatalogItem"
+			],
+			[
+				"crea",
+				"createClass"
+			],
+			[
+				"Hello",
+				"HelloMessage"
+			],
+			[
+				"local",
+				"localhost"
+			],
+			[
+				"server",
+				"server_name"
+			],
+			[
+				"su",
+				"sumMultiplesOf"
+			],
+			[
+				"sm",
+				"sumMultiplesOf"
+			],
+			[
+				"APP",
+				"APP_ROOT"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Main.hs",
+			"settings":
+			{
+				"buffer_size": 762,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "methods.xml",
+			"settings":
+			{
+				"buffer_size": 101660,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/Haskell/Haskell.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Haskell/Haskell.sublime-build",
+					""
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Haskell/Haskell.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Markdown Preview/Markdown.sublime-build",
+					""
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Markdown Preview/Markdown.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 490.0,
+		"last_filter": "remp",
+		"selected_items":
+		[
+			[
+				"remp",
+				"Package Control: Remove Package"
+			],
+			[
+				"ssbash",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"ss pla",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"ss ha",
+				"Set Syntax: Haskell"
+			],
+			[
+				"ip",
+				"Package Control: Install Package"
+			],
+			[
+				"pre",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"previ",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"prev",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"ss abap",
+				"Set Syntax: ABAP"
+			],
+			[
+				"prevo",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"pandoc ",
+				"Pandoc: Convert a Pandoc file to HTML"
+			],
+			[
+				"markdo",
+				"Set Syntax: Markdown"
+			],
+			[
+				"docx",
+				"Pandoc: Convert a Pandoc file to DocX"
+			],
+			[
+				"pandoc",
+				"Pandoc: Convert a Pandoc file to DocX"
+			],
+			[
+				"pand",
+				"Pandoc: Convert a Pandoc file to HTML"
+			],
+			[
+				"pan",
+				"Pandoc: Convert a Pandoc file to DocX"
+			],
+			[
+				"ss mark",
+				"Set Syntax: MultiMarkdown"
+			],
+			[
+				"ss mar",
+				"Set Syntax: Markdown GFM"
+			],
+			[
+				"inde",
+				"Indent XML"
+			],
+			[
+				"inser",
+				"Insert Nums"
+			],
+			[
+				"index",
+				"Indent XML"
+			],
+			[
+				"insert",
+				"Insert Nums"
+			],
+			[
+				"ins",
+				"Insert Nums"
+			],
+			[
+				"surr",
+				"Surround: surround selection"
+			],
+			[
+				"surroun",
+				"Surround: surround selection"
+			],
+			[
+				"surro",
+				"Surround: surround selection"
+			],
+			[
+				"indent",
+				"Indent XML"
+			],
+			[
+				"inden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"inse",
+				"Insert Nums"
+			],
+			[
+				"xml ",
+				"Pretty JSON: JSON 2 XML"
+			],
+			[
+				"ssa",
+				"Set Syntax: ABAP"
+			],
+			[
+				"sspla",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"pi",
+				"Package Control: Install Package"
+			],
+			[
+				"sshtml",
+				"Set Syntax: HTML"
+			],
+			[
+				"html",
+				"HTML: Encode Special Characters"
+			],
+			[
+				"git bra",
+				"Git: Change Branch"
+			],
+			[
+				"stash",
+				"Git: Stash"
+			],
+			[
+				"branch",
+				"Git: Change Branch"
+			],
+			[
+				"shell",
+				"SublimeREPL: Shell"
+			],
+			[
+				"she",
+				"Set Syntax: HTML (Erlang)"
+			],
+			[
+				"push",
+				"Git: Push"
+			],
+			[
+				"commit",
+				"Git: Commit"
+			],
+			[
+				"sta",
+				"Git: Status"
+			],
+			[
+				"s",
+				"Sublimerge"
+			],
+			[
+				"pull",
+				"Git: Pull Current Branch"
+			],
+			[
+				"comm",
+				"Git: Commit"
+			],
+			[
+				"pus",
+				"Git: Push"
+			],
+			[
+				"stat",
+				"Git: Status"
+			],
+			[
+				"git p",
+				"Git: Push"
+			],
+			[
+				"commi",
+				"Git: Commit"
+			],
+			[
+				"shel",
+				"SublimeREPL: Shell"
+			],
+			[
+				"git st",
+				"Git: Status"
+			],
+			[
+				"mark",
+				"Set Syntax: Markdown GFM"
+			],
+			[
+				"remove pa	",
+				"Package Control: Remove Package"
+			],
+			[
+				"ss jek",
+				"Set Syntax: Markdown (Jekyll)"
+			],
+			[
+				"markdown",
+				"Set Syntax: Markdown GFM"
+			],
+			[
+				"preview",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"je",
+				"Jekyll: New post"
+			],
+			[
+				"ssngi",
+				"Set Syntax: nginx"
+			],
+			[
+				"diff",
+				"FileDiffs: Menu"
+			],
+			[
+				"ssng",
+				"Set Syntax: nginx"
+			],
+			[
+				"ss coff",
+				"Set Syntax: CoffeeScript (JSX)"
+			],
+			[
+				"ssn",
+				"Set Syntax: nginx"
+			],
+			[
+				"mp",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"repl",
+				"SublimeREPL: Clojure"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 725.0
+	},
+	"console":
+	{
+		"height": 162.0,
+		"history":
+		[
+			"view.encoding()",
+			"view().encoding()",
+			"import urllib.request,os,hashlib; h = '2deb499853c4371624f5a07e27c334aa' + 'bf8c4e67d14fb0525ba4f89698a6d7e1'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/prog/projects/pure/haskell/abapdocu"
+	],
+	"file_history":
+	[
+		"/C/Users/Oleg/AppData/Local/Temp/scp16445/etc/systemd/system/aviasales-upload.service",
+		"/C/Users/Oleg/AppData/Local/Temp/scp45690/etc/systemd/system/aviasales-upload.service",
+		"/C/Users/Oleg/AppData/Local/Temp/scp49974/etc/systemd/system/aviasales-upload.timer",
+		"/D/docs/awt/aviasales-upload.log",
+		"/D/docs/awt/aslog.log",
+		"/C/Users/Oleg/AppData/Local/Temp/scp48046/etc/systemd/system/ipython.service",
+		"/C/Users/Oleg/AppData/Local/Temp/scp13974/root/awt/aviasales-api/log.tgz",
+		"/C/Users/Oleg/AppData/Local/Temp/scp58874/root/awt/aviasales-api/aviasales-upload.log",
+		"/C/Users/Oleg/AppData/Local/Temp/scp49398/etc/systemd/system/aviasales-upload.timee",
+		"/C/Users/Oleg/AppData/Local/Temp/scp45702/etc/systemd/system/awt.service",
+		"/D/prog/projects/sbt/awt/dbPlugin/src/test/scala/awt/plugin/Stream2MinSpecification.scala",
+		"/D/prog/projects/pure/python/abap/rosneft.py",
+		"/D/prog/projects/pure/haskell/hackerrank/Cont.hs",
+		"/C/Users/Oleg/AppData/Local/Temp/scp42328/root/.ssh/id_rsa.pub",
+		"/C/Users/Oleg/AppData/Local/Temp/scp42411/root/.ssh/id_rsa",
+		"/D/prog/projects/sbt/awt/logo.txt",
+		"/D/prog/projects/sbt/hhschool/README.md",
+		"/D/prog/projects/sbt/awt/build.sbt",
+		"/D/prog/projects/sbt/hhschool/project/build.properties",
+		"/D/prog/projects/pure/haskell/euler/Problem518.hs",
+		"/D/prog/projects/sbt/bnat/build.sbt",
+		"/C/Users/Oleg/AppData/Local/Temp/scp08954/etc/profile",
+		"/C/Users/Oleg/AppData/Local/Temp/scp57953/etc/nginx/nginx.conf",
+		"/C/Users/Oleg/AppData/Local/Temp/scp32981/root/orientdb-community-2.1.0/bin/server.sh",
+		"/C/Users/Oleg/AppData/Local/Temp/scp34616/root/orientdb-community-2.1.0/bin/orientdb.sh",
+		"/C/Users/Oleg/AppData/Local/Temp/scp30608/root/orientdb-community-2.1.0/config/orientdb-server-config.xml",
+		"/C/Users/Oleg/AppData/Local/Temp/scp34450/root/orientdb-community-2.1.0/config/hazelcast.xml",
+		"/C/Users/Oleg/AppData/Local/Temp/scp11206/root/.profile",
+		"/C/Users/Oleg/AppData/Local/Temp/scp09613/etc/profile.d/Z99-cloud-locale-test.sh",
+		"/C/Users/Oleg/AppData/Local/Temp/scp08885/etc/profile.d/bash_completion.sh",
+		"/C/Users/Oleg/AppData/Local/Temp/scp40172/etc/nginx/sites-enabled/orient",
+		"/C/Users/Oleg/AppData/Local/Temp/scp21599/etc/systemd/system/ipython.service",
+		"/C/Users/Oleg/AppData/Local/Temp/scp37178/root/scala-jupyter/jupyter-scala_2.11.6-0.2.0-SNAPSHOT/bin/jupyter-scala",
+		"/C/Users/Oleg/AppData/Local/Temp/scp09442/etc/profile.d/cabal.sh",
+		"/C/Users/Oleg/AppData/Local/Temp/scp44737/root/orientdb-community-2.1.0/bin/server.sh",
+		"/C/Users/Oleg/AppData/Local/Temp/scp30051/root/orientdb-community-2.1.0/config/orientdb-client-log.properties",
+		"/C/Users/Oleg/AppData/Local/Temp/scp34900/root/orientdb-community-2.1.0/config/orientdb-server-log.properties",
+		"/D/apps/ciscoVPN/Profiles/MOESK.PCF",
+		"/C/Users/Oleg/AppData/Roaming/SAP/Common/SapLogonTree.xml",
+		"/C/Users/Oleg/AppData/Roaming/SAP/Common/sapshortcut.ini",
+		"/C/Users/Oleg/AppData/Roaming/SAP/Common/saplogon.ini",
+		"/D/prog/projects/pure/idris/plays/hello.idr",
+		"/C/Users/Oleg/AppData/Roaming/Sublime Text 3/Packages/User/idris.sublime-build",
+		"/D/prog/projects/pure/idris/plays/Prims.idr",
+		"/D/prog/projects/sbt/bnat/project/build.properties",
+		"/D/prog/projects/sbt/bnat/.gitignore",
+		"/C/Users/Oleg/AppData/Local/Temp/scp31717/root/orientdb-community-2.1.0/bin/hs_err_pid21150.log",
+		"/C/Users/Oleg/AppData/Local/Temp/scp31458/root/orientdb-community-2.1.0/bin/hs_err_pid21877.log",
+		"/C/Users/Oleg/AppData/Local/Temp/scp32344/etc/systemd/system/orient.service",
+		"/C/Users/Oleg/AppData/Local/Temp/scp18187/etc/systemd/system/orient.service",
+		"/D/docs/BDO/nn/fm_fields.tab",
+		"/D/docs/BDO/nn/zcl_fmreserv.abap",
+		"/D/docs/BDO/nn/zfm_xml_to_data.xslt",
+		"/D/docs/BDO/rosneft/ZFC_DOGOVOR_SF_OPL.abap",
+		"/D/docs/BDO/rosneft/spec.md",
+		"/C/Users/Oleg/AppData/Roaming/pandoc/examples/Makefile",
+		"/C/Users/Oleg/AppData/Roaming/pandoc/templates/default.html5",
+		"/D/docs/BDO/rosneft/ZRDD_GET_DOG_OPL.abap",
+		"/E/donwloads/ZFC_DOGOVOR_SF_OPL.txt",
+		"/E/donwloads/zfc_dogovor_sf_op.xml",
+		"/D/docs/redmine/orient-server.log.0",
+		"/C/Users/Oleg/AppData/Local/Temp/scp53269/root/orientdb-community-2.1.0/log/orient-server.log.0",
+		"/E/donwloads/pow-plugin/pow-plugin/src/main/resources/plugin.json",
+		"/D/docs/redmine/orientdb-lucene-2.1.0-dist/plugin.json",
+		"/C/Users/Oleg/AppData/Local/Temp/7zO2FCB.tmp/MANIFEST.MF",
+		"/C/Users/Oleg/AppData/Local/Temp/7zOF55C.tmp/MANIFEST.MF",
+		"/C/Users/Oleg/AppData/Local/Temp/scp46040/root/orientdb-community-2.1.0/plugins/readme.txt",
+		"/C/Users/Oleg/Documents/response.txt",
+		"/C/Users/Oleg/AppData/Local/Temp/7zO6C5C.tmp/response",
+		"/D/prog/projects/sbt/awt/dbPlugin/target/scala-2.11/dbplugin_2.11-0.0.1.jar",
+		"/C/Users/Oleg/AppData/Local/Temp/scp09397/root/orientdb-community-2.1.0/config/orientdb-server-config.xml",
+		"/D/prog/projects/pure/jekyll/Odomontois.github.io/_includes/ad-footer.html",
+		"/D/prog/projects/pure/jekyll/Odomontois.github.io/_posts/2015-09-14-gremlin-languages-frack.md",
+		"/D/prog/projects/pure/jekyll/Odomontois.github.io/github-pages.sublime-project",
+		"/D/docs/oldian/app.js",
+		"/D/prog/projects/hanastudio/HSB_30_NIZHNIKOV_OL/__empty__/developers/nizhnikov/liqforecast/service/liqForecast.xsodata",
+		"/D/prog/projects/pure/js/libs/node_modules/immutable/dist/immutable.js",
+		"/D/prog/projects/hanastudio/HSB_30_NIZHNIKOV_OL/__empty__/developers/nizhnikov/liqforecast/lib/immutable.xsjslib",
+		"/C/Users/Oleg/AppData/Local/Temp/scp01251/etc/nginx/sites-available/yota-landing",
+		"/D/prog/projects/work/universalendorsement/index.html",
+		"/D/prog/projects/pure/jekyll/Odomontois.github.io/_layouts/post.html",
+		"/D/prog/projects/pure/jekyll/Odomontois.github.io/_layouts/default.html",
+		"/d/prog/projects/pure/jekyll/Odomontois.github.io/_posts/2015-09-14-gremlin-languages-fuck.md",
+		"/D/prog/projects/pure/jekyll/Odomontois.github.io/_site/404.html",
+		"/D/prog/projects/pure/jekyll/Odomontois.github.io/me.md",
+		"/D/prog/projects/pure/jekyll/Odomontois.github.io/_site/index.html",
+		"/D/prog/projects/pure/jekyll/Odomontois.github.io/_posts/2015-09-14-gremlin-languages-fuck.md",
+		"/D/prog/projects/pure/jekyll/Odomontois.github.io/_posts/2015-09-14-sdsad.md",
+		"/d/prog/projects/pure/jekyll/Odomontois.github.io/_posts/2015-09-14-sdsad.md",
+		"/D/prog/projects/pure/jekyll/Odomontois.github.io/_posts/2015-09-14-Gremlin-langs.md",
+		"/D/prog/projects/hanastudio/HSB_30_NIZHNIKOV_OL/__empty__/developers/nizhnikov/liqforecast/js/db.js",
+		"/D/prog/projects/sbt/oldian/build.sbt",
+		"/D/prog/projects/hanastudio/HSB_30_NIZHNIKOV_OL/__empty__/developers/nizhnikov/liqforecast/webContent/smartTableTest.html",
+		"/D/prog/projects/hanastudio/HSB_30_NIZHNIKOV_OL/__empty__/developers/nizhnikov/liqforecast/.project",
+		"/C/Users/Oleg/AppData/Local/Temp/scp11141/etc/nginx/sites-available/oldian",
+		"/C/Users/Oleg/AppData/Local/Temp/scp20073/var/log/nginx/access.log",
+		"/C/Users/Oleg/AppData/Local/Temp/scp06453/etc/gitlab/gitlab.rb",
+		"/C/Users/Oleg/AppData/Local/Temp/scp10862/etc/nginx/sites-available/yota-landing",
+		"/C/Users/Oleg/AppData/Local/Temp/scp34803/root/.ipython/profile_nbserver/ipython_notebook_config.py",
+		"/C/Users/Oleg/AppData/Local/Temp/scp33231/etc/systemd/system/ipython.service",
+		"/C/Users/Oleg/AppData/Local/Temp/scp48535/etc/gitlab/gitlab.rb",
+		"/C/Users/Oleg/AppData/Local/Temp/scp26770/etc/gitlab/gitlab.rb",
+		"/E/donwloads/Expenses - Expenses.tsv",
+		"/C/Users/Oleg/.ssh/id_rsa.pub",
+		"/E/donwloads/Expenses - Expenses.csv",
+		"/C/Users/Oleg/AppData/Local/Temp/scp09457/home/redmine/oldian_redmine/config/configuration.yml",
+		"/C/Users/Oleg/AppData/Local/Temp/scp40800/var/log/gitlab/gitlab-rails/production.log",
+		"/C/Users/Oleg/AppData/Local/Temp/scp47435/var/log/gitlab/sidekiq/current",
+		"/C/Users/Oleg/AppData/Local/Temp/scp40457/var/log/gitlab/gitlab-rails/application.log",
+		"/C/Users/Oleg/AppData/Local/Temp/scp22178/var/opt/gitlab/nginx/conf/gitlab-http.conf",
+		"/C/Users/Oleg/AppData/Local/Temp/scp22375/var/opt/gitlab/nginx/conf/nginx.conf",
+		"/C/Users/Oleg/AppData/Local/Temp/scp08467/etc/nginx/sites-available/bdo_redmine",
+		"/C/Users/Oleg/AppData/Local/Temp/scp13235/var/opt/gitlab/.ssh/bitbucket_rsa.pub",
+		"/C/Users/Oleg/AppData/Local/Temp/scp40767/var/log/gitlab/unicorn/config",
+		"/D/docs/oldian/gitlab.oldian.ru.crt",
+		"/E/donwloads/ca (2).pem",
+		"/E/donwloads/sub.class1.server.ca (2).pem",
+		"/C/Users/Oleg/AppData/Local/Temp/scp39537/var/log/gitlab/unicorn/unicorn_stdout.log",
+		"/C/Users/Oleg/AppData/Local/Temp/scp39689/var/log/gitlab/unicorn/unicorn_stderr.log",
+		"/C/Users/Oleg/AppData/Local/Temp/scp11538/var/opt/gitlab/.ssh/id_rsa.pub",
+		"/C/Users/Oleg/AppData/Local/Temp/scp08866/var/opt/gitlab/.ssh/config",
+		"/D/docs/oldian/gitlab.oldian.ru.key",
+		"/H/marengo-.003/primary2.key",
+		"/H/marengo-.003/primary.key",
+		"/H/marengo-.003/name.key",
+		"/D/prog/projects/pure/jekyll/Odomontois.github.io/public/css/syntax.css",
+		"/D/prog/projects/pure/jekyll/Odomontois.github.io/index.html",
+		"/C/Users/Oleg/AppData/Roaming/Sublime Text 3/Packages/User/scala-highlight.sublime-snippet"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"icon: .*\\.",
+			"error",
+			"⇒",
+			"^$",
+			"xmx",
+			"\\.\\w*",
+			"Z_CL_FMRESERV",
+			"et_opl",
+			"-\\+",
+			"APPEND s_neust.",
+			"s_neust",
+			"LIKE",
+			",$",
+			"LIKE",
+			",$",
+			"LIKE",
+			"^$",
+			"dog ",
+			"et_pen",
+			"уе_зут",
+			"bs ",
+			"tbl2",
+			"f080_opl",
+			"ZZZZ",
+			"YYYY",
+			"XXXX",
+			"LIKE",
+			"ZZZZ",
+			"YYYY",
+			"XXXX",
+			"ZZZZ",
+			"YYYY",
+			"XXXX",
+			"YYYY",
+			"XXXX",
+			":",
+			"LIKE",
+			"ZZZZ",
+			"YYYY",
+			"XXXX ",
+			"<mxCell id=\"233f9fbfe1e0e6b0-",
+			"LIKE",
+			"form",
+			"([\\W]|^)(SELECT|FROM|TRAVERSE|WHILE|ORDER BY|LIMIT|UNWIND|AS|OR|AND|FROM|GROUP BY|WHERE|BETWEEN)([\\W]|$)",
+			".\n",
+			"io",
+			"_posts",
+			"password",
+			"activ",
+			"example.com",
+			"[\\w ]*",
+			"\\w*",
+			"\\t",
+			"../hlist",
+			"memory",
+			"unicorn['wo",
+			"unicorn",
+			"https",
+			"puma",
+			"^[0-9A-Za-z \\n]*$",
+			"[^0-9A-Za-z \\n]",
+			"Р",
+			"М",
+			"К",
+			"^[0-9A-Za-z ]*$",
+			"Т",
+			"T",
+			"Т",
+			"О",
+			"Н",
+			"Е",
+			"А",
+			"С",
+			"В",
+			"^.*[^0-9A-Z \\n].*$",
+			"&lt;",
+			"&gt;",
+			"FOR .*",
+			"-",
+			"where",
+			"WHERE",
+			"FOR",
+			"-",
+			"(?:-)[^.]*",
+			"-.*(?:\\.)",
+			"-",
+			"10.",
+			"issues",
+			"\\/",
+			"rack",
+			"listen_a",
+			".78",
+			"127.0.0.1",
+			"localhost",
+			"\n#",
+			"Windows",
+			"eth1",
+			"eth0",
+			"eth1",
+			"eth0",
+			"eth1",
+			"datacenter",
+			"",
+			"",
+			";[^;]*?Heroku[^;]*",
+			"Heroku",
+			"herok",
+			";.*?heroku.*;",
+			"INTF CLSNAME=",
+			"INTF CLSNAME=\"\"",
+			"CLSNAME=\"zif_fm_gui_status\"",
+			"\"zif_fm_gui_status\"",
+			"ZIF_.*STATUS",
+			"ZIF",
+			"zif_scmg",
+			"zif_fm_gui_status",
+			"interface zif_fm_gui_status",
+			"zif_fm_gui_status",
+			"'.*",
+			"[<>/]",
+			"(?:<)\\w*/?(?:>)"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"=>",
+			"ZCL_FMRESERV",
+			" ",
+			"\" vertex=\"1\">\n      <mxGeometry as=\"geometry\" height=\"26\" width=\"310\" y=\"26\"/>\n    </mxCell>",
+			"\" parent=\"233f9fbfe1e0e6b0-3\" style=\"text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;\" value=\"+ ",
+			"<mxCell id=\"233f9fbfe1e0e6b0-",
+			"\" vertex=\"1\">\n      <mxGeometry as=\"geometry\" height=\"26\" width=\"310\" y=\"26\"/>\n    </mxCell>",
+			"\" parent=\"233f9fbfe1e0e6b0-3\" style=\"text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;\" value=\"+ ",
+			"<mxCell id=\"233f9fbfe1e0e6b0-",
+			"\" vertex=\"1\">\n      <mxGeometry as=\"geometry\" height=\"26\" width=\"310\" y=\"26\"/>\n    </mxCell>",
+			"\" style=\"text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;\" value=\"+ ",
+			"<mxCell id=\"233f9fbfe1e0e6b0-4\" parent=\"233f9fbfe1e0e6b0-",
+			" <mxCell id=\"233f9fbfe1e0e6b0-4\" parent=\"233f9fbfe1e0e6b0-",
+			"\" vertex=\"1\">\n      <mxGeometry as=\"geometry\" height=\"26\" width=\"310\" y=\"26\"/>\n    </mxCell>",
+			"\" parent=\"233f9fbfe1e0e6b0-3\" style=\"text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;\" value=\"+ ",
+			"<mxCell id=\"233f9fbfe1e0e6b0-",
+			"---",
+			"|",
+			"../blob/hlist",
+			"P",
+			"M",
+			"K",
+			"T",
+			"O",
+			"H",
+			"E",
+			"A",
+			"C",
+			"B",
+			"<",
+			">",
+			"<",
+			"||",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "D:\\prog\\projects\\pure\\haskell\\abapdocu"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Main.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 762,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								526,
+								526
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SublimeHaskell/Syntaxes/Haskell-SublimeHaskell.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "methods.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 101660,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								139,
+								139
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 58.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 394.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 130.0
+	},
+	"output.git-commit":
+	{
+		"height": 130.0
+	},
+	"output.git-pull":
+	{
+		"height": 130.0
+	},
+	"output.git-push":
+	{
+		"height": 130.0
+	},
+	"output.haskell_sublime_load":
+	{
+		"height": 282.0
+	},
+	"output.markdown":
+	{
+		"height": 130.0
+	},
+	"output.sbt":
+	{
+		"height": 0.0
+	},
+	"output.sbt_error":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"ssng",
+				"shoplist\\.idea\\scopes\\scope_settings.xml"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 625.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 475.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 343.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
