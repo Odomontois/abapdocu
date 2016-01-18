@@ -16,8 +16,14 @@ readParams = do
     [src, dst] -> (src, dst)
     _other     -> (defaultSrc, defaultDst)
 
-    
-
+instance WordProcessing (IOSLA s) where
+  processChild =
+    isElem
+    >>> (hasName "class" <+> hasName "interface")
+    >>> paragraph name
+    where 
+      paragraph =  we "p" . we "r" . we "t" 
+      name = getAttrValue "name" >>>  mkText
 
 main::IO ()
 main = do
