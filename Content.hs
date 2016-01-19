@@ -4,12 +4,13 @@ import Text.XML.HXT.Core
 import WordProcessing
 
 content::Process XmlTree
+-- @The content of document
 content = styles <+> body where
-  fieldVal name = 
-    getChildren 
+  fieldVal name =
+    getChildren
     >>> isElem
-    >>> hasName name 
-    >>> getChildren 
+    >>> hasName name
+    >>> getChildren
     >>> isText
 
   styles = readDocument [] "styles.xml" >>> getChildren
@@ -24,14 +25,14 @@ content = styles <+> body where
     >>> (hasName "class" <+> hasName "interface")
     >>> clifHeading <+> descr <+> methods
 
-  clifHeading = paragraph "Heading1" text where 
-    text          = name >>> mkText 
+  clifHeading = paragraph "Heading1" text where
+    text          = name >>> mkText
     name          = kind <+> getAttrValue "name"
     kind          = kindClass <+> kindInterface
     kindClass     = hasName "class"     >>> constA "Класс "
     kindInterface = hasName "interface" >>> constA "Интерфейс "
 
-  methods = 
+  methods =
     getChildren
     >>> isElem
     >>> hasName "method"
@@ -41,34 +42,33 @@ content = styles <+> body where
       <+> handling
       <+> descr
       <+> params
-      
 
   methodHeading = paragraph "Heading2" text where
     text = name  >>> mkText
     name = constA "метод " <+> getAttrValue "name"
-  
+
   static = paragraph "Bold" text where
     text = hasAttr "static" >>> constA " (статический)" >>> mkText
 
   exposure = getAttrValue "exposure" >>> exposures where
     exposures = public <+> protected <+> private
-    expTxt val style text = isA (== val) >>> paragraph style (txt text) 
+    expTxt val style text = isA (== val) >>> paragraph style (txt text)
     public    = expTxt "public"    "Green"  "общий"
     protected = expTxt "protected" "Yellow" "защищённый"
     private   = expTxt "private"   "Red"    "личный"
 
   handling = hasAttr "event_handler" >>> paragraph "Italic" text where
-    text = txt "обработчик события " 
-      <+> fieldVal "refName" 
-      <+> txt " класса " 
+    text = txt "обработчик события "
+      <+> fieldVal "refName"
+      <+> txt " класса "
       <+> fieldVal "refClass"
 
   descr  = normal  $ fieldVal "description"
 
   params = wtbl "TableNormal" borders rows where
     borders = wtblBorders 4
-    rows = 
-      getChildren 
+    rows =
+      getChildren
       >>> isElem
       >>> hasName "param"
       >>> we "tr" cells
