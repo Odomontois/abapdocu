@@ -34,6 +34,49 @@
       <w:b w:val="on" />
     </w:rPr>
   </w:style>
+  <w:style w:type="paragraph" w:default="1" w:styleId="Italic">
+    <w:name w:val="Italic" />
+    <w:basedOn w:val="Normal" />
+    <w:qFormat />
+    <w:rPr>
+      <w:sz w:val="24" />
+      <w:szCs w:val="24" />
+      <w:i w:val="on" />
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:default="1" w:styleId="Red">
+    <w:name w:val="Red" />
+    <w:basedOn w:val="Normal" />
+    <w:qFormat />
+    <w:rPr>
+      <w:sz w:val="24" />
+      <w:szCs w:val="24" />
+      <w:b w:val="on" />
+      <w:color w:val="FF0000"/>
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:default="1" w:styleId="Green">
+    <w:name w:val="Green" />
+    <w:basedOn w:val="Normal" />
+    <w:qFormat />
+    <w:rPr>
+      <w:sz w:val="24" />
+      <w:szCs w:val="24" />
+      <w:b w:val="on" />
+      <w:color w:val="00FF00"/>
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:default="1" w:styleId="Yellow">
+    <w:name w:val="Yellow" />
+    <w:basedOn w:val="Normal" />
+    <w:qFormat />
+    <w:rPr>
+      <w:sz w:val="24" />
+      <w:szCs w:val="24" />
+      <w:b w:val="on" />
+      <w:color w:val="00FFFF"/>
+    </w:rPr>
+  </w:style>
   <w:style w:type="paragraph" w:styleId="Heading1">
     <w:name w:val="heading 1" />
     <w:basedOn w:val="Normal" />

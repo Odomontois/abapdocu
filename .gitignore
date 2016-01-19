@@ -70,3 +70,4 @@ $RECYCLE.BIN/
 *.docx.xml
 output.xml
 output.odt
+*.exe

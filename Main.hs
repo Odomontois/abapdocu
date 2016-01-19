@@ -6,8 +6,15 @@ import Text.XML.HXT.Core
 import WordProcessing
 import System.Environment 
 
-content::Process
+content::Process XmlTree
 content = styles <+> body where
+  fieldVal name = 
+    getChildren 
+    >>> isElem
+    >>> hasName name 
+    >>> getChildren 
+    >>> isText
+
   styles = readDocument [] "styles.xml" >>> getChildren
 
   body = we "body" (getChildren >>> clifDocu)
@@ -31,17 +38,33 @@ content = styles <+> body where
     getChildren
     >>> isElem
     >>> hasName "method"
-    >>> methodHeading <+> descr <+> params
+    >>>  methodHeading
+      <+> static
+      <+> exposure
+      <+> handling
+      <+> descr
+      <+> params
+      
 
   methodHeading = paragraph "Heading2" text where
-    text = constA "метод " <+> getAttrValue "name" >>> mkText
+    text = name  >>> mkText
+    name = constA "метод " <+> getAttrValue "name"
+  
+  static = paragraph "Bold" text where
+    text = hasAttr "static" >>> constA " (статический)" >>> mkText
 
-  fieldVal name = 
-    getChildren 
-    >>> isElem
-    >>> hasName name 
-    >>> getChildren 
-    >>> isText
+  exposure = getAttrValue "exposure" >>> exposures where
+    exposures = public <+> protected <+> private
+    expTxt val style text = isA (== val) >>> paragraph style (txt text) 
+    public    = expTxt "public"    "Green"  "общий"
+    protected = expTxt "protected" "Yellow" "защищённый"
+    private   = expTxt "private"   "Red"    "личный"
+
+  handling = hasAttr "event_handler" >>> paragraph "Italic" text where
+    text = txt "обработчик события " 
+      <+> fieldVal "refName" 
+      <+> txt " класса " 
+      <+> fieldVal "refClass"
 
   descr  = normal  $ fieldVal "description"
 
