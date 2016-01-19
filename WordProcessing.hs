@@ -7,7 +7,6 @@ wordNS = "http://schemas.microsoft.com/office/word/2003/wordml"
 
 type Process a = IOStateArrow () a XmlTree
 
-
 w::String->[Process a]->[Process a]->Process a
 w = mkqelem . flip (mkQName "w") wordNS
 

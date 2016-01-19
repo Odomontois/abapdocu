@@ -22,6 +22,7 @@ main::IO ()
 main = do
   Params{..} <- cmdArgs params
   let indent = not noIndent
+  putStrLn "Hello"
   _ <- runX $
     readDocument [withValidate no] src
     >>> root [] [getChildren >>> isElem >>> hasName "types" >>> result content]

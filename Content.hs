@@ -1,17 +1,23 @@
+{-#LANGUAGE RankNTypes #-}
+
 module Content where
 
 import Text.XML.HXT.Core
 import WordProcessing
 
+type XmlProc= forall a.ArrowXml a=>a XmlTree XmlTree
+
+fieldVal::String->XmlProc
+fieldVal name =
+  getChildren
+  >>> isElem
+  >>> hasName name
+  >>> getChildren
+  >>> isText
+
 content::Process XmlTree
--- @The content of document
+-- The content of document
 content = styles <+> body where
-  fieldVal name =
-    getChildren
-    >>> isElem
-    >>> hasName name
-    >>> getChildren
-    >>> isText
 
   styles = readDocument [] "styles.xml" >>> getChildren
 
