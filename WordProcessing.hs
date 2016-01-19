@@ -23,17 +23,15 @@ result content = w "wordDocument" [sattr "xmlns:w" wordNS] [content]
 paragraph::String->Process a->Process a
 paragraph style text = w "p" [] [
   we "pPr" $ w "pStyle" [wa "val" style] [],
-  we  "r"  $ we "t"  text 
-  ]  
+  we  "r"  $ we "t"  text ]  
 
 wtbl::String->Process a->Process a->Process a
 wtbl style props rows = table where
   table = w "tbl" [] [
     w "tblPr" [] [
       w "tblStyle" [wa "val" style] [],
-      props], 
-    rows
-    ]
+      props] , 
+    rows ]
 
 wtblBorders::Integer->Process a
 wtblBorders size = w "tblBorders" [] $ map border sides where
