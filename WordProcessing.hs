@@ -26,17 +26,14 @@ paragraph style text = w "p" [] [
   we  "r"  $ we "t"  text 
   ]  
 
-wtbl::String->[Integer]->Process->Process->Process
-wtbl style widths props rows = table where
+wtbl::String->Process->Process->Process
+wtbl style props rows = table where
   table = w "tbl" [] [
     w "tblPr" [] [
       w "tblStyle" [wa "val" style] [],
       props], 
-    we "tblGrid" cols,
     rows
     ]
-  gridCol width = w "gridCol" [wa "w" $ show width] []
-  cols = catA $ map gridCol widths
 
 wtblBorders::Integer->Process
 wtblBorders size = w "tblBorders" [] $ map border sides where

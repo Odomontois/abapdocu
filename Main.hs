@@ -13,6 +13,7 @@ content = styles <+> body where
   body = we "body" (getChildren >>> clifDocu)
 
   normal = paragraph "Normal"
+  bold   = paragraph "Bold"
 
   clifDocu =
     isElem
@@ -44,16 +45,26 @@ content = styles <+> body where
 
   descr  = normal  $ fieldVal "description"
 
-  params = wtbl "TableNormal" widths borders rows where
+  params = wtbl "TableNormal" borders rows where
     borders = wtblBorders 4
-    widths = [100, 200, 400]
     rows = 
       getChildren 
       >>> isElem
       >>> hasName "param"
       >>> we "tr" cells
-    cells = name <+> we "tc" descr 
-    name = we "tc" $ paragraph "Bold" $ getAttrValue "name" >>> mkText
+    cells = catA $ map (we "tc") [name, kind, descr]
+    name   = bold $ getAttrValue "name" >>> mkText
+    kind   = normal $
+      fieldVal "kind"
+      >>> getText
+      >>> arr kindNm
+      >>> mkText
+
+  kindNm "importing" = "Импорт"
+  kindNm "exporting" = "Экспорт"
+  kindNm "changing"  = "Изменение"
+  kindNm "returning" = "Возврат"
+  kindNm _           = ""
 
 
 readParams::IO (String, String)
