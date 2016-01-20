@@ -1,12 +1,15 @@
-{-#LANGUAGE TypeSynonymInstances, DeriveDataTypeable, RecordWildCards #-}
+{-# LANGUAGE DeriveDataTypeable   #-}
+{-# LANGUAGE RecordWildCards      #-}
+{-# LANGUAGE TypeSynonymInstances #-}
 
 module Main where
 
-import Text.XML.HXT.Core
-import System.Console.CmdArgs
+import           Data.List
+import           System.Console.CmdArgs
+import           Text.XML.HXT.Core
 
-import WordProcessing
-import Content
+import           Content
+import           WordProcessing
 
 data Params = Params {src::FilePath, dst::FilePath, noIndent::Bool}
   deriving (Data,Typeable,Show,Eq)
@@ -25,7 +28,7 @@ main::IO ()
 main = do
   Params{..} <- cmdArgs params
   let indent = not noIndent
-  _ <- runX $
+  runX $
     readDocument [withValidate no] src
     >>> root [] [content styles]
     >>> writeDocument [withIndent indent] dst
