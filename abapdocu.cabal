@@ -63,7 +63,7 @@ executable abapdocu
   build-depends:       base >=4.8 && <4.9, hxt >=9.3 && <9.4, cmdargs >=0.10 && <0.11
 
   -- Directories containing source files.
-  -- hs-source-dirs:
+  hs-source-dirs: ./src
 
 
   -- Base language which the package is written in.

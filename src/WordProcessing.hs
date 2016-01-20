@@ -7,7 +7,6 @@ import Text.XML.HXT.Core
 wordNS::String
 wordNS = "http://schemas.microsoft.com/office/word/2003/wordml"
 
-
 w::ArrowXml a=>String->[a b XmlTree]->[a b XmlTree]->a b XmlTree
 w = mkqelem . flip (mkQName "w") wordNS
 
@@ -21,13 +20,14 @@ wordDocument::ArrowXml a=>a b XmlTree->a b XmlTree
 wordDocument content = w "wordDocument" [sattr "xmlns:w" wordNS] [content]
 
 paragraph::ArrowXml a=>String->a b XmlTree->a b XmlTree
-paragraph style text = w "p" [] [
-  we "pPr" $ w "pStyle" [wa "val" style] [],
-  we  "r"  $ we "t"  text ]
+paragraph style text =
+  w "p" [] [
+    we "pPr" $ w "pStyle" [wa "val" style] [],
+    we  "r"  $ we "t"  text ]
 
 wtbl::ArrowXml a=>String->a b XmlTree->a b XmlTree->a b XmlTree
-wtbl style props rows = table where
-  table = w "tbl" [] [
+wtbl style props rows =
+  w "tbl" [] [
     w "tblPr" [] [
       w "tblStyle" [wa "val" style] [],
       props] ,
