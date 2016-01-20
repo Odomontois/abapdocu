@@ -16,8 +16,8 @@ we name child = w name [] [child]
 wa::String->String->Process a
 wa = sqattr . flip (mkQName "w") wordNS
 
-result::Process a->Process a
-result content = w "wordDocument" [sattr "xmlns:w" wordNS] [content]
+wordDocument::Process a->Process a
+wordDocument content = w "wordDocument" [sattr "xmlns:w" wordNS] [content]
 
 paragraph::String->Process a->Process a
 paragraph style text = w "p" [] [
