@@ -18,12 +18,15 @@ params = Params {
   noIndent = def                        &= help "no indentation"
 }
 
+styles :: IOStateArrow s a XmlTree
+styles = readDocument [] "styles.xml" >>> getChildren
+
 main::IO ()
 main = do
   Params{..} <- cmdArgs params
   let indent = not noIndent
   _ <- runX $
     readDocument [withValidate no] src
-    >>> root [] [content]
+    >>> root [] [content styles]
     >>> writeDocument [withIndent indent] dst
   return ()

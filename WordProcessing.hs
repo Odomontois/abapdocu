@@ -1,3 +1,5 @@
+{-#LANGUAGE RankNTypes, ImpredicativeTypes#-}
+
 module WordProcessing where
 
 import Text.XML.HXT.Core
@@ -5,26 +7,25 @@ import Text.XML.HXT.Core
 wordNS::String
 wordNS = "http://schemas.microsoft.com/office/word/2003/wordml"
 
-type Process a = IOStateArrow () a XmlTree
 
-w::String->[Process a]->[Process a]->Process a
+w::ArrowXml a=>String->[a b XmlTree]->[a b XmlTree]->a b XmlTree
 w = mkqelem . flip (mkQName "w") wordNS
 
-we::String->Process a->Process a
+we::ArrowXml a=>String->a b XmlTree->a b XmlTree
 we name child = w name [] [child]
 
-wa::String->String->Process a
+wa::ArrowXml a=>String->String->a b XmlTree
 wa = sqattr . flip (mkQName "w") wordNS
 
-wordDocument::Process a->Process a
+wordDocument::ArrowXml a=>a b XmlTree->a b XmlTree
 wordDocument content = w "wordDocument" [sattr "xmlns:w" wordNS] [content]
 
-paragraph::String->Process a->Process a
+paragraph::ArrowXml a=>String->a b XmlTree->a b XmlTree
 paragraph style text = w "p" [] [
   we "pPr" $ w "pStyle" [wa "val" style] [],
   we  "r"  $ we "t"  text ]
 
-wtbl::String->Process a->Process a->Process a
+wtbl::ArrowXml a=>String->a b XmlTree->a b XmlTree->a b XmlTree
 wtbl style props rows = table where
   table = w "tbl" [] [
     w "tblPr" [] [
@@ -32,7 +33,7 @@ wtbl style props rows = table where
       props] ,
     rows ]
 
-wtblBorders::Integer->Process a
+wtblBorders::ArrowXml a=>Integer->a b XmlTree
 wtblBorders size = w "tblBorders" [] $ map border sides where
   sides = ["top", "left", "bottom", "right", "insideH", "insideV"]
   border side =

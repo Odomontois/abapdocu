@@ -1,14 +1,12 @@
 {-#LANGUAGE RankNTypes #-}
 
-module Content where
+module Content (content) where
 
 import Text.XML.HXT.Core
 import WordProcessing
 import qualified Message
 
-type XmlProc= forall a.ArrowXml a=>a XmlTree XmlTree
-
-fieldText::String->XmlProc
+fieldText::ArrowXml a =>String->a XmlTree XmlTree
 fieldText name =
   getChildren
   >>> isElem
@@ -16,12 +14,11 @@ fieldText name =
   >>> getChildren
   >>> isText
 
-fieldVal::ArrowXml a =>String -> a XmlTree String
+fieldVal::ArrowXml a =>String->a XmlTree String
 fieldVal name = fieldText name >>> getText
 
-content::Process XmlTree
--- The content of document
-content = top where
+content::ArrowXml a=>a XmlTree XmlTree->a XmlTree XmlTree
+content styles = top where
 
   top = getChildren
     >>> isElem
@@ -29,8 +26,6 @@ content = top where
     >>> wordDocument sections
 
   sections = styles <+> body
-
-  styles = readDocument [] "styles.xml" >>> getChildren
 
   body = we "body" (getChildren >>> clifDocu)
 

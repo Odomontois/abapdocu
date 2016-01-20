@@ -1,9 +1,9 @@
 module Message where
 
-className, intfName, paramKind, mtdName :: String -> String
+className, intfName, paramKind, mtdName::String->String
 className = ("класс " ++)
-intfName = ("интерфейс " ++)
-mtdName = ("метод " ++)
+intfName  = ("интерфейс " ++)
+mtdName   = ("метод " ++)
 
 paramKind "importing" = "Импорт"
 paramKind "exporting" = "Экспорт"
@@ -13,10 +13,10 @@ paramKind "tables"    = "Таблица"
 paramKind _           = ""
 
 static, public, protected, private::String
-static = "статический"
-public = "общий"
+static    = "статический"
+public    = "общий"
 protected = "защищённый"
-private = "личный"
+private   = "личный"
 
 eventHandler::String->String->String
 eventHandler evt cls = "обработчик события " ++ evt ++ " класса " ++ cls
