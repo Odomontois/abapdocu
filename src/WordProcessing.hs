@@ -1,8 +1,9 @@
-{-#LANGUAGE RankNTypes, ImpredicativeTypes#-}
+{-# LANGUAGE ImpredicativeTypes #-}
+{-# LANGUAGE RankNTypes         #-}
 
 module WordProcessing where
 
-import Text.XML.HXT.Core
+import           Text.XML.HXT.Core
 
 wordNS::String
 wordNS = "http://schemas.microsoft.com/office/word/2003/wordml"

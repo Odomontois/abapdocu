@@ -1,9 +1,21 @@
-module Message where
+module Message (
+  className   ,
+  intfName    ,
+  mtdName     ,
+  paramKind   ,
+  static      ,
+  public      ,
+  protected   ,
+  private     ,
+  eventHandler) where
+
+mkName::String->String->String
+mkName caption name = caption ++ " " ++ name
 
 className, intfName, paramKind, mtdName::String->String
-className = ("класс " ++)
-intfName  = ("интерфейс " ++)
-mtdName   = ("метод " ++)
+className = mkName "класс"
+intfName  = mkName "интерфейс"
+mtdName   = mkName "метод"
 
 paramKind "importing" = "Импорт"
 paramKind "exporting" = "Экспорт"

@@ -1,10 +1,10 @@
-{-#LANGUAGE RankNTypes #-}
+{-# LANGUAGE RankNTypes #-}
 
 module Content (content) where
 
-import Text.XML.HXT.Core
-import WordProcessing
 import qualified Message
+import           Text.XML.HXT.Core
+import           WordProcessing
 
 fieldText::ArrowXml a =>String->a XmlTree XmlTree
 fieldText name =

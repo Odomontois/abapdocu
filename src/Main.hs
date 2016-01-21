@@ -1,6 +1,5 @@
 {-# LANGUAGE DeriveDataTypeable   #-}
 {-# LANGUAGE RecordWildCards      #-}
-{-# LANGUAGE TypeSynonymInstances #-}
 
 module Main where
 
