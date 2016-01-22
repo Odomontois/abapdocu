@@ -1,3 +1,4 @@
+{-# LANGUAGE Arrows     #-}
 {-# LANGUAGE RankNTypes #-}
 
 module Content (content) where
@@ -79,10 +80,14 @@ exposure = getAttrValue "exposure" >>> exposures where
   protected = expTxt "protected" "Yellow" Message.protected
   private   = expTxt "private"   "Red"    Message.private
 
-handling = hasAttr "event_handler" >>> p "Italic" text where
-  text   = evtCls >>> arr2 Message.eventHandler
-  evtCls = fieldVal "refName" &&& fieldVal "refClass"
-
+handling = block where
+  text = proc method -> do
+    cls <- fieldVal "refClass" -< method
+    mtd <- fieldVal "refName"  -< method
+    returnA -< Message.eventHandler mtd cls
+  block = proc xml -> do
+    handler <- hasAttr "event_handler" -< xml
+    p "Italic" text -< handler
 
 params = wtbl "TableNormal" borders rows where
   borders = wtblBorders 4
